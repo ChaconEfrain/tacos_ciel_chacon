@@ -8,7 +8,7 @@ export default function Home() {
       <Head>
         <title>Tacos de canasta &quot;La canasta yucateca&quot;</title>
       </Head>
-      <main className="text-5xl text-primary-darkest">
+      <main className="text-primary-darkest">
         <Hero />
         <Promotions />
       </main>
