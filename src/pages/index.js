@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Hero from "@/components/Hero";
 import Promotions from "@/components/Promotions";
+import Packages from "@/components/Packages";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <main className="text-primary-dark">
         <Hero />
         <Promotions />
+        <Packages />
       </main>
     </>
   );
