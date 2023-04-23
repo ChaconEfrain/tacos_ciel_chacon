@@ -6,24 +6,26 @@ import Promotion from "./Promotion";
 const Promotions = () => {
   return (
     <Container>
-      <div className="grid grid-cols-[45fr_55fr] gap-4 justify-items-center items-center">
+      <div className="grid grid-cols-[45fr_55fr] gap-4 justify-items-center">
         <div className="flex flex-col gap-10">
           <h2 className="text-secondary-dark text-5xl font-bold tracking-tight">
-            Conoce nuestras opciones!
+            Conoce nuestras promociones!
           </h2>
-          {promotions.map(
-            ({ title, description, tacos, drinks, price, icon }) => (
-              <Promotion
-                key={price}
-                title={title}
-                description={description}
-                tacos={tacos}
-                drinks={drinks}
-                price={price}
-                icon={icon}
-              />
-            )
-          )}
+          <div className="self-center flex flex-col gap-10">
+            {promotions.map(
+              ({ title, description, tacos, drinks, price, icon }) => (
+                <Promotion
+                  key={price}
+                  title={title}
+                  description={description}
+                  tacos={tacos}
+                  drinks={drinks}
+                  price={price}
+                  icon={icon}
+                />
+              )
+            )}
+          </div>
         </div>
         <figure>
           <img

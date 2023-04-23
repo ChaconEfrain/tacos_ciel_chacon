@@ -11,23 +11,25 @@ const Promotion = ({ title, description, tacos, drinks, price, icon }) => {
           {title}
         </p>
       </div>
-      <p className="text-xl">{description}</p>
+      <p className="text-xl mb-3">{description}</p>
       <div className="text-xl flex flex-col gap-2">
         <span>Incluye:</span>
-        <ul className="flex flex-col gap-3 ml-4">
-          <li className="flex items-center gap-4">
-            <Taco className="w-8 h-8" />
-            {tacos}
-          </li>
-          <li className="flex items-center gap-4">
-            <Soda className="w-8 h-8" />
-            {drinks}
-          </li>
-          <li className="flex items-center gap-4">
-            <Money className="w-8 h-8" />
+        <div className="flex items-center gap-24">
+          <ul className="flex flex-col gap-3 ml-4">
+            <li className="flex items-center gap-4">
+              <Taco className="w-8 h-8" />
+              {tacos}
+            </li>
+            <li className="flex items-center gap-4">
+              <Soda className="w-8 h-8" />
+              {drinks}
+            </li>
+          </ul>
+          <strong className="text-6xl">
+            {/* <Money className="w-8 h-8" /> */}
             {price}
-          </li>
-        </ul>
+          </strong>
+        </div>
       </div>
     </article>
   );
