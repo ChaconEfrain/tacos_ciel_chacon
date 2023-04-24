@@ -9,7 +9,7 @@ export default function Home() {
       <Head>
         <title>Tacos de canasta &quot;La canasta yucateca&quot;</title>
       </Head>
-      <main className="text-primary-dark">
+      <main className="text-primary-dark font-medium">
         <Hero />
         <Promotions />
         <Packages />
