@@ -1,6 +1,6 @@
 import { Couple, Family, Person } from "@/icons";
 
-export const promotions = [
+export const PROMOTIONS = [
   {
     title: "Personal",
     description:
@@ -30,100 +30,136 @@ export const promotions = [
   },
 ];
 
-export const packages = [
+export const PACKAGES = [
   {
     title: "Pa que pruebes",
     groupSize: "20 personas",
-    optionOne: {
-      tacos: "80 tacos",
-      tacosForEach: "4 tacos por persona",
-      price: "$960",
-    },
-    optionTwo: {
-      tacos: "100 tacos",
-      tacosForEach: "5 tacos por persona",
-      price: "$1,200",
-    },
-    optionThree: {
-      tacos: "120 tacos",
-      tacosForEach: "6 tacos por persona",
-      price: "$1,440",
-    },
+    options: [
+      {
+        tacos: "80 tacos",
+        tacosForEach: "4 tacos por persona",
+        price: "$960",
+      },
+      {
+        tacos: "100 tacos",
+        tacosForEach: "5 tacos por persona",
+        price: "$1,200",
+      },
+      {
+        tacos: "120 tacos",
+        tacosForEach: "6 tacos por persona",
+        price: "$1,440",
+      },
+    ],
   },
   {
     title: "Pa tu reunión",
     groupSize: "30 personas",
-    optionOne: {
-      tacos: "120 tacos",
-      tacosForEach: "4 tacos por persona",
-      price: "$1,440",
-    },
-    optionTwo: {
-      tacos: "150 tacos",
-      tacosForEach: "5 tacos por persona",
-      price: "$1,650",
-    },
-    optionThree: {
-      tacos: "180 tacos",
-      tacosForEach: "6 tacos por persona",
-      price: "$1,980",
-    },
+    options: [
+      {
+        tacos: "120 tacos",
+        tacosForEach: "4 tacos por persona",
+        price: "$1,440",
+      },
+      {
+        tacos: "150 tacos",
+        tacosForEach: "5 tacos por persona",
+        price: "$1,650",
+      },
+      {
+        tacos: "180 tacos",
+        tacosForEach: "6 tacos por persona",
+        price: "$1,980",
+      },
+    ],
   },
   {
     title: "Pa que convivas",
     groupSize: "40 personas",
-    optionOne: {
-      tacos: "160 tacos",
-      tacosForEach: "4 tacos por persona",
-      price: "$1,760",
-    },
-    optionTwo: {
-      tacos: "200 tacos",
-      tacosForEach: "5 tacos por persona",
-      price: "$2,200",
-    },
-    optionThree: {
-      tacos: "240 tacos",
-      tacosForEach: "6 tacos por persona",
-      price: "$2,640",
-    },
+    options: [
+      {
+        tacos: "160 tacos",
+        tacosForEach: "4 tacos por persona",
+        price: "$1,760",
+      },
+      {
+        tacos: "200 tacos",
+        tacosForEach: "5 tacos por persona",
+        price: "$2,200",
+      },
+      {
+        tacos: "240 tacos",
+        tacosForEach: "6 tacos por persona",
+        price: "$2,640",
+      },
+    ],
   },
   {
     title: "Pa que festejes",
     groupSize: "50 personas",
-    optionOne: {
-      tacos: "200 tacos",
-      tacosForEach: "4 tacos por persona",
-      price: "$2,200",
-    },
-    optionTwo: {
-      tacos: "250 tacos",
-      tacosForEach: "5 tacos por persona",
-      price: "$2,500",
-    },
-    optionThree: {
-      tacos: "300 tacos",
-      tacosForEach: "6 tacos por persona",
-      price: "$3,000",
-    },
+    options: [
+      {
+        tacos: "200 tacos",
+        tacosForEach: "4 tacos por persona",
+        price: "$2,200",
+      },
+      {
+        tacos: "250 tacos",
+        tacosForEach: "5 tacos por persona",
+        price: "$2,500",
+      },
+      {
+        tacos: "300 tacos",
+        tacosForEach: "6 tacos por persona",
+        price: "$3,000",
+      },
+    ],
   },
   {
     title: "Pa que te enfiestes",
     groupSize: "60 personas",
-    optionOne: {
-      tacos: "240 tacos",
-      tacosForEach: "4 tacos por persona",
-      price: "$2,400",
-    },
-    optionTwo: {
-      tacos: "300 tacos",
-      tacosForEach: "5 tacos por persona",
-      price: "$3,000",
-    },
-    optionThree: {
-      tacos: "360 tacos",
-      tacosForEach: "6 tacos por persona",
-      price: "$3,600",
-    },
+    options: [
+      {
+        tacos: "240 tacos",
+        tacosForEach: "4 tacos por persona",
+        price: "$2,400",
+      },
+      {
+        tacos: "300 tacos",
+        tacosForEach: "5 tacos por persona",
+        price: "$3,000",
+      },
+      {
+        tacos: "360 tacos",
+        tacosForEach: "6 tacos por persona",
+        price: "$3,600",
+      },
+    ],
   },
+];
+
+export const MENU = [
+  "Chicharrón prensado",
+  "Papa con longaniza",
+  "Frijoles con queso",
+  "Frijoles con queso y longaniza",
+  "Pollo en mole poblano",
+  "Pollo en mole almendrado",
+  "Pollo en mole verde",
+  "Pollo en rajas poblanas",
+  "Pollo a la leña",
+  "Tinga de pollo",
+  "Papa con chuleta ahumada",
+  "Papa con queso y mantequilla",
+  "Papa con tocino",
+  "Chicharrón en salsa verde",
+  "Chicharrón en salsa roja",
+  "Carne molida",
+  "Huevo con longaniza",
+  "Pastor",
+  "Milanesa al adobo",
+  "Milanesa al ajo",
+  "Milanesa a la leña",
+  "Milanesa a la yucateca",
+  "Puntas de filete a las finas hierbas",
 ];
