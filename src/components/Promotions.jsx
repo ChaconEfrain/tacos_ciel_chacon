@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { promotions } from "@/constants";
+import { PROMOTIONS } from "@/constants";
 import Container from "./Container";
 import Promotion from "./Promotion";
 
@@ -12,7 +12,7 @@ const Promotions = () => {
             Conoce nuestras promociones!
           </h2>
           <div className="self-center flex flex-col gap-10">
-            {promotions.map(
+            {PROMOTIONS.map(
               ({ title, description, tacos, drinks, price, icon }) => (
                 <Promotion
                   key={price}
@@ -27,8 +27,9 @@ const Promotions = () => {
             )}
           </div>
         </div>
-        <figure>
+        <figure className="w-[85%] self-center">
           <img
+            className="rounded-3xl"
             src="https://res.cloudinary.com/efrainchacon/image/upload/f_auto/g_auto/v1681867756/tacos_de_canasta_ciel_chacon/FB_IMG_1666010222566_081550_1_enykze.jpg"
             alt="Tacos de canasta con salsa"
           />
