@@ -1,8 +1,10 @@
 import React from "react";
 
-const Container = ({ children }) => {
+const Container = ({ children, id }) => {
   return (
-    <section className="max-w-[80rem] mx-auto mt-24 px-3">{children}</section>
+    <section id={id} className="max-w-7xl mx-auto mt-24 px-3">
+      {children}
+    </section>
   );
 };
 
