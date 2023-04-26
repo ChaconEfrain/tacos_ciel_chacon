@@ -32,7 +32,7 @@ export const PROMOTIONS = [
 
 export const PACKAGES = [
   {
-    title: "Pa que pruebes",
+    title: "Pa' que pruebes",
     groupSize: "20 personas",
     options: [
       {
@@ -53,7 +53,7 @@ export const PACKAGES = [
     ],
   },
   {
-    title: "Pa tu reunión",
+    title: "Pa' tu reunión",
     groupSize: "30 personas",
     options: [
       {
@@ -74,7 +74,7 @@ export const PACKAGES = [
     ],
   },
   {
-    title: "Pa que convivas",
+    title: "Pa' que convivas",
     groupSize: "40 personas",
     options: [
       {
@@ -95,7 +95,7 @@ export const PACKAGES = [
     ],
   },
   {
-    title: "Pa que festejes",
+    title: "Pa' que festejes",
     groupSize: "50 personas",
     options: [
       {
@@ -116,7 +116,7 @@ export const PACKAGES = [
     ],
   },
   {
-    title: "Pa que te enfiestes",
+    title: "Pa' que te enfiestes",
     groupSize: "60 personas",
     options: [
       {
