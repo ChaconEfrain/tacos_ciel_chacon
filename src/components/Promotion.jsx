@@ -25,7 +25,7 @@ const Promotion = ({ title, description, tacos, drinks, price, icon }) => {
               {drinks}
             </li>
           </ul>
-          <strong className="text-6xl">
+          <strong className="text-6xl text-secondary-dark">
             {/* <Money className="w-8 h-8" /> */}
             {price}
           </strong>
