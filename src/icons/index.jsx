@@ -279,6 +279,46 @@ export const Check = ({ className }) => (
   </svg>
 );
 
+export const Girl = ({ className }) => {
+  return (
+    <svg
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 32 32"
+    >
+      <g>
+        <g clipPath="url(#clip0_901_3025)">
+          <path
+            fill="#FFC44D"
+            d="M24 31H1s.69-3.62 1-5c.16-.71.68-2.13 4.64-3.19 1.14-.31 2.57-.59 4.36-.81 0 0 1 3 5 3s5-3 5-3c1.78.22 3.2.5 4.34.79 3.98 1.06 4.5 2.45 4.66 3.21.29 1.38 1 5 1 5h-7z"
+          ></path>
+          <path
+            fill="#668077"
+            d="M21 9s-1 0-2-2c-3 2-8 2-8 2 0 5 2 9 5 9s5-4 5-9zm3-1l1.35 14.77-.01.02c-1.14-.29-2.56-.57-4.34-.79 0 0-1 3-5 3s-5-3-5-3c-1.79.22-3.22.5-4.36.81l-.04-.16L8 8c.53-4.44 4.13-7 8-7s7.47 2.59 8 7z"
+          ></path>
+          <path
+            fill="#FFE6EA"
+            d="M19 7c1 2 2 2 2 2 0 5-2 9-5 9s-5-4-5-9c0 0 5 0 8-2z"
+          ></path>
+          <path
+            stroke="#000"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M1 31s.687-3.621 1-5c.208-.917 1-3 9-4 0 0 1 3 5 3s5-3 5-3c8 1 8.792 3.021 9 4 .294 1.384 1 5 1 5M7 19.501L8 8c.531-4.437 4.134-7 8-7 3.866 0 7.469 2.594 8 7l1 11.5M8 30v1m16-1v1M18.999 7C16 9 11 9 11 9c0 5 2 9 5 9s5-4 5-9"
+          ></path>
+        </g>
+        <defs>
+          <clipPath id="clip0_901_3025">
+            <path fill="#fff" d="M0 0H32V32H0z"></path>
+          </clipPath>
+        </defs>
+      </g>
+    </svg>
+  );
+};
+
 // export const Money = ({ className }) => (
 //   <svg
 //     xmlns="http://www.w3.org/2000/svg"
