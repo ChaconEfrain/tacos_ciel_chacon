@@ -34,7 +34,7 @@ const Package = ({ title, groupSize, options }) => {
       </div>
       <footer className="flex justify-center">
         <Link
-          href="/informacion-eventos"
+          href={`/paquete/${title}`}
           className="bg-secondary-medium font-bold rounded-full py-2 px-10 mb-6 text-white"
         >
           Solicitar paquete
