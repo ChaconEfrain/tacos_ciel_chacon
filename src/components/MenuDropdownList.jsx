@@ -1,13 +1,15 @@
 import { MENU } from "@/constants";
 import React from "react";
 
-const MenuDropdownList = ({ id }) => {
+const MenuDropdownList = ({ name, handleInputChange }) => {
   return (
     <li>
-      <select id={id} className="w-full">
+      <select name={name} className="w-full" onChange={handleInputChange}>
         <option value={null}>Seleccionar guiso</option>
         {MENU.map((item) => (
-          <option key={item}>{item}</option>
+          <option key={item} value={item}>
+            {item}
+          </option>
         ))}
       </select>
     </li>
