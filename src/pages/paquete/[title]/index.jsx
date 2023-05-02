@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import MenuDropdownList from "@/components/MenuDropdownList";
 import { PACKAGES } from "@/constants";
+import EventDataConfirmation from "@/components/EventDataConfirmation";
 
 const EventsForm = () => {
   const router = useRouter();
   const formRef = useRef(null);
-  const [whatsappMessage, setWhatsappMessage] = useState("");
   const [packageSelectedOptions, setPackageSelectedOptions] = useState([]);
   const [title, setTitle] = useState("");
   const [formData, setFormData] = useState({
@@ -18,7 +18,16 @@ const EventsForm = () => {
     tacos: "",
     flavors: [],
   });
-  const [error, setError] = useState("");
+  const [error, setError] = useState({
+    name: "",
+    date: "",
+    time: "",
+    place: "",
+    people: "",
+    tacos: "",
+    flavors: "",
+  });
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
 
   useEffect(() => {
     if (router.isReady) {
@@ -32,32 +41,38 @@ const EventsForm = () => {
     }
   }, [router.isReady]);
 
+  const validateFormData = (data) => {
+    const error = {};
+    if (data.name.length === 0) error.name = "El nombre es requerido";
+    else if (data.date.length === 0) error.date = "Una fecha es requerida";
+    else if (data.time.length === 0) error.time = "Una hora es requerida";
+    else if (data.place.length === 0) error.place = "Un lugar es requerido";
+    else if (data.people.length === 0)
+      error.people = "La cantidad de personas es requerida";
+    else if (data.people === "0")
+      error.people = "La cantidad de personas debe ser mayor a cero";
+    else if (data.tacos.length === 0)
+      error.tacos = "La cantidad de tacos es requerida";
+    else if (data.flavors.length === 0)
+      error.flavors = "Mínimo un guiso es requerido";
+
+    return error;
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     const newFormData = { ...formData };
     if (name === "flavors") newFormData[name].push(value);
     else newFormData[name] = value;
     setFormData(newFormData);
+    setError(validateFormData(newFormData));
   };
 
-  const handleSendInfo = () => {
-    const anyFieldEmpty = Object.values(formData).some(
-      (field) => field === "" || field.length === 0
-    );
-    if (anyFieldEmpty) setError("Todos los campos son requeridos");
-    const { name, date, time, place, people, tacos, flavors } = formData;
-    const message = `Hola! Estoy interesad@ en el paquete *${title}*%0A%0ALos datos de mi evento son:%0A%0A🤓 Nombre: ${name}%0A%0A📆 Fecha: ${date}%0A%0A⌚ Hora: ${time}%0A%0A📍 Lugar: ${place}%0A%0A💃 Personas: ${people}%0A%0A🌮 Tacos: ${tacos}%0A%0A🥘 Guisos: ${flavors}`;
-    setWhatsappMessage(message);
-    formRef.current.reset();
-    setFormData({
-      name: "",
-      date: "",
-      time: "",
-      place: "",
-      people: "",
-      tacos: "",
-      flavors: [],
-    });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const anyErrors = Object.values(error).some((value) => value.length > 0);
+    if (anyErrors) return;
+    setShowConfirmationModal(true);
   };
 
   return (
@@ -65,12 +80,16 @@ const EventsForm = () => {
       <h1 className="text-5xl font-bold text-secondary-dark my-8">
         Compártenos la información de tu evento
       </h1>
-      <div className="grid grid-cols-2 items-center justify-items-center h-screen shadow-xl mb-8 overflow-hidden">
-        <form className="grid grid-cols-2 gap-x-4 gap-y-10 p-8" ref={formRef}>
+      <div className="grid grid-cols-2 items-center justify-items-center shadow-xl mb-8">
+        <form
+          className="grid grid-cols-2 gap-x-4 gap-y-10 p-8"
+          ref={formRef}
+          onSubmit={handleSubmit}
+        >
           <h2 className="text-4xl font-bold text-secondary-dark col-span-full self-center">
             {title}
           </h2>
-          <div className="flex flex-col gap-12">
+          <fieldset className="flex flex-col gap-12">
             <div className="flex flex-col gap-2">
               <label className="font-bold text-2xl" htmlFor="input-nombre">
                 Nombre del solicitante
@@ -82,8 +101,9 @@ const EventsForm = () => {
                 value={formData.name}
                 type="text"
                 placeholder="Juán Pérez"
-                className="py-2 px-6"
+                className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]"
               />
+              {error.name?.length > 0 && <p>{error.name}</p>}
             </div>
             <div className="flex flex-col gap-2">
               <label className="font-bold text-2xl" htmlFor="input-fecha">
@@ -95,8 +115,9 @@ const EventsForm = () => {
                 name="date"
                 value={formData.date}
                 type="date"
-                className="py-2 px-6"
+                className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]"
               />
+              {error.date?.length > 0 && <p>{error.date}</p>}
             </div>
             <div className="flex flex-col gap-2">
               <label className="font-bold text-2xl" htmlFor="input-hora">
@@ -108,8 +129,9 @@ const EventsForm = () => {
                 name="time"
                 value={formData.time}
                 type="time"
-                className="py-2 px-6"
+                className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]"
               />
+              {error.time?.length > 0 && <p>{error.time}</p>}
             </div>
             <div className="flex flex-col gap-2">
               <label className="font-bold text-2xl" htmlFor="input-lugar">
@@ -122,11 +144,12 @@ const EventsForm = () => {
                 value={formData.place}
                 type="text"
                 placeholder="Calle 48 #264..."
-                className="py-2 px-6"
+                className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]"
               />
+              {error.place?.length > 0 && <p>{error.place}</p>}
             </div>
-          </div>
-          <div className="flex flex-col gap-12">
+          </fieldset>
+          <fieldset className="flex flex-col gap-12">
             <div className="flex flex-col gap-2">
               <label className="font-bold text-2xl" htmlFor="input-personas">
                 Cantidad de personas
@@ -137,9 +160,11 @@ const EventsForm = () => {
                 name="people"
                 value={formData.people}
                 type="number"
+                min={0}
                 placeholder="60"
-                className="py-2 px-6"
+                className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]"
               />
+              {error.people?.length > 0 && <p>{error.people}</p>}
             </div>
             <div className="flex flex-col gap-2">
               <label className="font-bold text-2xl">Cantidad de tacos</label>
@@ -151,16 +176,17 @@ const EventsForm = () => {
                     type="radio"
                     name="tacos"
                     value={option.tacos}
-                    className="py-2 px-6"
+                    className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]"
                   />
                   <label htmlFor={`option-${i}`}>{option.tacos}</label>
                 </div>
               ))}
+              {error.tacos?.length > 0 && <p>{error.tacos}</p>}
               {/* <input
-              onChange={handleInputChange} type="number" placeholder="100" className="py-2 px-6" /> */}
+              onChange={handleInputChange} type="number" placeholder="100" className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]" /> */}
             </div>
             <div className="flex flex-col gap-2">
-              <label className="font-bold text-2xl">Guisos a escoger</label>
+              <label className="font-bold text-2xl">Elige mínimo 1 guiso</label>
               <ul className="flex flex-col gap-2">
                 {[1, 2, 3, 4].map((el) => (
                   <MenuDropdownList
@@ -170,9 +196,13 @@ const EventsForm = () => {
                   />
                 ))}
               </ul>
+              {error.flavors?.length > 0 && <p>{error.flavors}</p>}
             </div>
-          </div>
-          <a
+          </fieldset>
+          <button className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 px-10 text-white col-span-full text-2xl">
+            Confirmar
+          </button>
+          {/* <a
             href={`https://api.whatsapp.com/send?phone=529999943965&text=${whatsappMessage}`}
             onClick={handleSendInfo}
             target="_blank"
@@ -180,7 +210,7 @@ const EventsForm = () => {
             className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 px-10 text-white col-span-full text-2xl text-center"
           >
             Enviar
-          </a>
+          </a> */}
         </form>
         <figure className="p-12 relative flex items-center justify-center justify-self-stretch self-stretch bg-gradient-to-br from-secondary-medium to-secondary-dark">
           <img
@@ -195,6 +225,9 @@ const EventsForm = () => {
           /> */}
         </figure>
       </div>
+      {showConfirmationModal && (
+        <EventDataConfirmation title={title} eventData={formData} />
+      )}
     </main>
   );
 };
