@@ -163,3 +163,15 @@ export const MENU = [
   "Milanesa a la yucateca",
   "Puntas de filete a las finas hierbas",
 ];
+
+export const TRADUCTIONS = {
+  name: "Nombre",
+  date: "Fecha",
+  time: "Hora",
+  place: "Lugar",
+  people: "Personas",
+  tacos: "Tacos",
+  flavors: "Guisos",
+};
+
+export const MAX_FLAVORS_AMOUNT = 4;
