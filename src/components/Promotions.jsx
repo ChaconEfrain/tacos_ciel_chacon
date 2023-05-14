@@ -6,11 +6,11 @@ import Promotion from "./Promotion";
 const Promotions = () => {
   return (
     <Container>
-      <div className="grid grid-cols-[45fr_55fr] gap-4 justify-items-center">
-        <div className="flex flex-col gap-10">
-          <h2 className="text-secondary-dark text-5xl font-bold tracking-tight">
-            Conoce nuestras promociones!
-          </h2>
+      <div className="grid lg:grid-cols-[45fr_55fr] gap-x-4 gap-y-8 justify-items-center">
+        <h2 className="text-secondary-dark sm:text-5xl text-4xl font-bold tracking-tight col-span-full xl:justify-self-start">
+          Conoce nuestras promociones!
+        </h2>
+        <div className="flex flex-col gap-10 lg:px-6 sm:w-[70%]">
           <div className="self-center flex flex-col gap-10">
             {PROMOTIONS.map(
               ({ title, description, tacos, drinks, price, icon }) => (
@@ -27,7 +27,7 @@ const Promotions = () => {
             )}
           </div>
         </div>
-        <figure className="w-[85%] self-center">
+        <figure className="xl:w-[85%] self-center justify-self-center hidden lg:block">
           <img
             className="rounded-3xl"
             src="https://res.cloudinary.com/efrainchacon/image/upload/f_auto/g_auto/v1681867756/tacos_de_canasta_ciel_chacon/FB_IMG_1666010222566_081550_1_enykze.jpg"
