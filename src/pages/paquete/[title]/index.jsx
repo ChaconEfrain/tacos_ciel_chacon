@@ -6,6 +6,7 @@ import EventDataConfirmation from "@/components/EventDataConfirmation";
 
 const EventsForm = () => {
   const router = useRouter();
+  const formRef = useRef(null);
   const [packageSelectedOptions, setPackageSelectedOptions] = useState([]);
   const [title, setTitle] = useState("");
   const [formData, setFormData] = useState({
@@ -38,6 +39,7 @@ const EventsForm = () => {
       ).options;
       setTitle(title);
       setPackageSelectedOptions(options);
+      formRef.current.style.transform = "translateX(0)";
     }
   }, [router.isReady]);
 
@@ -66,8 +68,9 @@ const EventsForm = () => {
     if (data.tacos.length === 0)
       newError["tacos"] = "La cantidad de tacos es requerida";
     //flavors validation
-    if (data.flavors.length > 0) newError["flavors"] = "";
-    if (data.flavors.length === 0)
+    if (data.flavors.some((el) => typeof el !== "undefined"))
+      newError["flavors"] = "";
+    if (data.flavors.every((el) => typeof el === "undefined"))
       newError["flavors"] = "Al menos un guiso es requerido";
 
     setError(newError);
@@ -101,23 +104,27 @@ const EventsForm = () => {
   };
 
   return (
-    <main className="flex flex-col justify-center items-center text-xl text-primary-dark font-medium relative">
-      <h1 className="text-5xl font-bold text-secondary-dark my-8">
+    <main className="flex flex-col justify-center items-center sm:text-xl text-lg text-primary-dark font-medium relative">
+      <h1 className="sm:text-5xl text-4xl font-bold text-secondary-dark my-8 sm:text-center mx-4">
         Compártenos la información de tu evento
       </h1>
-      <div className="grid grid-cols-2 items-center justify-items-center shadow-xl mb-8 rounded-xl  overflow-hidden">
+      <div
+        className="grid xl:grid-cols-2 items-center justify-items-center shadow-xl mb-8 rounded-xl  overflow-hidden -translate-x-full transition-all duration-700"
+        ref={formRef}
+      >
         <form
-          className="grid grid-cols-2 gap-x-4 gap-y-10 p-8"
-          ref={formRef}
-          // autoComplete="off"
+          className="grid sm:grid-cols-2 gap-x-4 gap-y-10 p-8"
           onSubmit={handleSubmit}
         >
-          <h2 className="text-4xl font-bold text-secondary-dark col-span-full self-center">
+          <h2 className="sm:text-4xl text-3xl font-bold text-secondary-dark col-span-full self-center">
             {title}
           </h2>
-          <fieldset className="flex flex-col gap-12">
+          <fieldset className="flex flex-col sm:gap-12 gap-4">
             <div className="flex flex-col gap-2">
-              <label className="font-bold text-2xl" htmlFor="input-nombre">
+              <label
+                className="font-bold sm:text-2xl text-xl"
+                htmlFor="input-nombre"
+              >
                 Nombre del solicitante
               </label>
               {error.name.length > 0 && showErrors && (
@@ -134,7 +141,10 @@ const EventsForm = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="font-bold text-2xl" htmlFor="input-fecha">
+              <label
+                className="font-bold sm:text-2xl text-xl"
+                htmlFor="input-fecha"
+              >
                 Fecha del evento
               </label>
               {error.date.length > 0 && showErrors && (
@@ -150,7 +160,10 @@ const EventsForm = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="font-bold text-2xl" htmlFor="input-hora">
+              <label
+                className="font-bold sm:text-2xl text-xl"
+                htmlFor="input-hora"
+              >
                 Hora del evento
               </label>
               {error.time.length > 0 && showErrors && (
@@ -166,7 +179,10 @@ const EventsForm = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="font-bold text-2xl" htmlFor="input-lugar">
+              <label
+                className="font-bold sm:text-2xl text-xl"
+                htmlFor="input-lugar"
+              >
                 Lugar del evento
               </label>
               {error.place.length > 0 && showErrors && (
@@ -183,9 +199,12 @@ const EventsForm = () => {
               />
             </div>
           </fieldset>
-          <fieldset className="flex flex-col gap-12">
+          <fieldset className="flex flex-col sm:gap-12 gap-4">
             <div className="flex flex-col gap-2">
-              <label className="font-bold text-2xl" htmlFor="input-personas">
+              <label
+                className="font-bold sm:text-2xl text-xl"
+                htmlFor="input-personas"
+              >
                 Cantidad de personas
               </label>
               {error.people.length > 0 && showErrors && (
@@ -203,7 +222,9 @@ const EventsForm = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label className="font-bold text-2xl">Cantidad de tacos</label>
+              <label className="font-bold sm:text-2xl text-xl">
+                Cantidad de tacos
+              </label>
               {error.tacos.length > 0 && showErrors && (
                 <p className="text-red-500 text-lg">{error.tacos}</p>
               )}
@@ -222,7 +243,9 @@ const EventsForm = () => {
               ))}
             </div>
             <div className="flex flex-col gap-2">
-              <label className="font-bold text-2xl">Elige mínimo 1 guiso</label>
+              <label className="font-bold sm:text-2xl text-xl">
+                Elige mínimo 1 guiso
+              </label>
               {error.flavors.length > 0 && showErrors && (
                 <p className="text-red-500 text-lg">{error.flavors}</p>
               )}
@@ -239,11 +262,11 @@ const EventsForm = () => {
               </ul>
             </div>
           </fieldset>
-          <button className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 px-10 text-white col-span-full text-2xl">
+          <button className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 px-10 text-white col-span-full sm:text-2xl text-xl">
             Confirmar
           </button>
         </form>
-        <figure className="p-12 relative flex items-center justify-center justify-self-stretch self-stretch bg-gradient-to-br from-secondary-medium to-secondary-dark">
+        <figure className="p-12 relative items-center justify-center justify-self-stretch self-stretch bg-gradient-to-br from-secondary-medium to-secondary-dark xl:flex hidden">
           <img
             className="aspect-[402/401] w-full z-10"
             src="https://res.cloudinary.com/efrainchacon/image/upload/f_auto/v1682529858/tacos_de_canasta_ciel_chacon/IMG-20230419-WA0026_1_nskbmc-removebg-preview_copyrecorte_mihnvb.png"
