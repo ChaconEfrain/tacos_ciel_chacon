@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import MenuDropdownList from "@/components/MenuDropdownList";
 import { MAX_FLAVORS_AMOUNT, PACKAGES } from "@/constants";
 import EventDataConfirmation from "@/components/EventDataConfirmation";
+import Link from "next/link";
 
 const EventsForm = () => {
   const router = useRouter();
@@ -89,12 +90,12 @@ const EventsForm = () => {
       newFormData[name] = newFlavors;
     } else newFormData[name] = value;
     setFormData(newFormData);
-    validateFormData(newFormData);
     if (showErrors) setShowErrors(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    validateFormData(formData);
     const anyErrors = Object.values(error).some((value) => value.length > 0);
     if (anyErrors) {
       setShowErrors(true);
@@ -116,9 +117,12 @@ const EventsForm = () => {
           className="grid sm:grid-cols-2 gap-x-4 gap-y-10 p-8"
           onSubmit={handleSubmit}
         >
-          <h2 className="sm:text-4xl text-3xl font-bold text-secondary-dark col-span-full self-center">
-            {title}
-          </h2>
+          <header className="col-span-full flex flex-col gap-2 justify-self-start items-start">
+            <Link href="/">&larr; Volver</Link>
+            <h2 className="sm:text-4xl text-3xl font-bold text-secondary-dark col-span-full self-center">
+              {title}
+            </h2>
+          </header>
           <fieldset className="flex flex-col sm:gap-12 gap-4">
             <div className="flex flex-col gap-2">
               <label
