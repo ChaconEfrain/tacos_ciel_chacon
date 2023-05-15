@@ -3,7 +3,7 @@ import { Girl, Taco } from "@/icons";
 
 const Package = ({ title, groupSize, options }) => {
   return (
-    <article className="text-xl relative overflow-hidden flex flex-col gap-6 border-2 rounded-lg border-secondary-medium bg ">
+    <article className="text-xl relative overflow-hidden flex flex-col gap-6 border-2 rounded-lg border-secondary-medium">
       <header className="flex flex-col gap-4">
         <span className="self-start px-6 bg-secondary-medium font-bold text-2xl text-white">
           {groupSize}

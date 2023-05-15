@@ -18,6 +18,23 @@ const Packages = () => {
 
   useEffect(() => {
     register();
+    swiperEl.current.breakpoints = {
+      1280: {
+        slidesPerView: 3,
+        spaceBetween: 16,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 16,
+      },
+      300: {
+        slidesPerView: 1,
+      },
+    };
+    swiperEl.current.pagination = {
+      clickable: true,
+      bulletActiveClass: "swiper-bullet",
+    };
   }, []);
 
   return (
@@ -34,11 +51,7 @@ const Packages = () => {
           >
             &larr;
           </button>
-          <swiper-container
-            ref={swiperEl}
-            slides-per-view="3"
-            space-between="16"
-          >
+          <swiper-container ref={swiperEl}>
             {PACKAGES.map(({ title, groupSize, options }) => (
               <swiper-slide key={title}>
                 <Package
