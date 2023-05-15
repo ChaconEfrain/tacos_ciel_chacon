@@ -18,13 +18,15 @@ const EventDataConfirmation = ({ eventData, title, showModal, isShowing }) => {
   return (
     <>
       <article
-        className={`absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-30 bg-secondary-light w-1/3 p-6 flex flex-col gap-6 rounded-xl ${
+        className={`absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-30 bg-secondary-light p-6 flex flex-col gap-6 rounded-xl ${
           !isShowing ? "scale-0" : "scale-100"
-        } transition-all duration-300`}
+        } transition-all duration-300 w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%]`}
       >
         <div className="flex flex-col gap-2">
-          <p className="text-2xl">Corrobora la información de tu evento</p>
-          <ul className="ml-6">
+          <p className="sm:text-2xl text-xl">
+            Corrobora la información de tu evento
+          </p>
+          <ul className="sm:ml-6">
             {Object.entries(eventData).map(([key, value]) => (
               <li key={key} className="flex gap-2">
                 <strong className="text-secondary-medium">
@@ -47,12 +49,12 @@ const EventDataConfirmation = ({ eventData, title, showModal, isShowing }) => {
             onClick={handleSendInfo}
             target="_blank"
             rel="noreferrer"
-            className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 px-10 text-white col-span-full text-2xl text-center inline-block w-1/2"
+            className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 px-10 text-white col-span-full sm:text-2xl text-xl text-center inline-block w-1/2"
           >
             Enviar
           </a>
           <button
-            className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 px-10 text-white col-span-full text-2xl text-center w-1/2"
+            className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 px-10 text-white col-span-full sm:text-2xl text-xl text-center w-1/2"
             onClick={editForm}
           >
             Editar
