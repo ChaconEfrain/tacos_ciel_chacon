@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/router";
 import MenuDropdownList from "@/components/MenuDropdownList";
-import { MAX_FLAVORS_AMOUNT, PACKAGES } from "@/constants";
+import { MAX_FLAVORS_AMOUNT, MIN_FLAVORS_AMOUNT, PACKAGES } from "@/constants";
 import EventDataConfirmation from "@/components/EventDataConfirmation";
 import Link from "next/link";
 
@@ -9,7 +9,8 @@ const EventsForm = () => {
   const router = useRouter();
   const formRef = useRef(null);
   const [packageSelectedOptions, setPackageSelectedOptions] = useState([]);
-  const [tacosForEachPerson, setTacosForEachPerson] = useState(4);
+  const [tacosForEachPerson, setTacosForEachPerson] =
+    useState(MIN_FLAVORS_AMOUNT);
   const [title, setTitle] = useState("");
   const [formData, setFormData] = useState({
     name: "",
@@ -70,9 +71,15 @@ const EventsForm = () => {
     if (data.tacos.length === 0)
       newError["tacos"] = "La cantidad de tacos es requerida";
     //flavors validation
-    if (data.flavors.filter((el) => typeof el !== "undefined").length >= 4)
+    if (
+      data.flavors.filter((el) => typeof el !== "undefined").length >=
+      MIN_FLAVORS_AMOUNT
+    )
       newError["flavors"] = "";
-    if (data.flavors.filter((el) => typeof el !== "undefined").length < 4)
+    if (
+      data.flavors.filter((el) => typeof el !== "undefined").length <
+      MIN_FLAVORS_AMOUNT
+    )
       newError["flavors"] = "Mínimo cuatro guisos es requerido";
 
     setError(newError);
@@ -262,7 +269,7 @@ const EventsForm = () => {
             {error.flavors.length > 0 && showErrors && (
               <p className="text-red-500 text-lg">{error.flavors}</p>
             )}
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+            <ul className="grid sm:grid-cols-2 gap-x-4 gap-y-2">
               {Array(tacosForEachPerson)
                 .fill(undefined)
                 .map((el, i) => (
