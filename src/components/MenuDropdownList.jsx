@@ -11,7 +11,7 @@ const MenuDropdownList = ({
     <li>
       <select
         name={name}
-        className="w-full focus:shadow-[0_0_0_2px_#ff7588]"
+        className="w-full focus:shadow-[0_0_0_2px_#ff7588] py-2"
         data-position={position}
         onChange={handleInputChange}
       >
