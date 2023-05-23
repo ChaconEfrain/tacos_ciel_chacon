@@ -14,15 +14,19 @@ const Package = ({ title, groupSize, options }) => {
         {options.map(({ tacos, tacosForEach, price }, i) => (
           <section key={price} className="flex flex-col">
             <div className="flex items-center gap-6">
-              <ul className="flex flex-col gap-4">
-                <li className="flex gap-2">
-                  <Taco className="w-6 h-6" /> {tacos}
+              <ul className="flex flex-col gap-4 w-full">
+                <li className="flex gap-2 items-center justify-between">
+                  <span className="flex gap-2">
+                    <Taco className="w-6 h-6" /> {tacos}
+                  </span>
+                  <strong className="sm:text-5xl text-4xl text-secondary-dark">
+                    {price}
+                  </strong>
                 </li>
                 <li className="flex gap-2">
                   <Girl className="w-6 h-6" /> {tacosForEach}
                 </li>
               </ul>
-              <strong className="text-5xl text-secondary-dark">{price}</strong>
             </div>
             <div
               className={`bg-primary-dark h-[3px] my-6 w-3/4 self-center ${
