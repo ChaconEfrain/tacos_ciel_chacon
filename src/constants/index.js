@@ -175,3 +175,5 @@ export const TRADUCTIONS = {
 };
 
 export const MAX_FLAVORS_AMOUNT = 6;
+
+export const MIN_FLAVORS_AMOUNT = 4;
