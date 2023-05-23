@@ -39,7 +39,7 @@ const Package = ({ title, groupSize, options }) => {
       <footer className="flex justify-center">
         <Link
           href={`/paquete/${title}`}
-          className="bg-secondary-medium font-bold rounded-full py-2 px-10 mb-6 text-white"
+          className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 px-10 mb-6 text-white"
         >
           Solicitar paquete
         </Link>
