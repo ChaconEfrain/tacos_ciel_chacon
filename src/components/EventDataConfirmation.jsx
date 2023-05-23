@@ -18,7 +18,7 @@ const EventDataConfirmation = ({ eventData, title, showModal, isShowing }) => {
   return (
     <>
       <article
-        className={`absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-30 bg-secondary-light p-6 flex flex-col gap-6 rounded-xl ${
+        className={`fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-30 bg-secondary-light p-6 flex flex-col gap-6 rounded-xl ${
           !isShowing ? "scale-0" : "scale-100"
         } transition-all duration-300 w-[90%] sm:w-[70%] md:w-[60%] lg:w-[50%]`}
       >
