@@ -19,39 +19,50 @@ const Packages = () => {
   useEffect(() => {
     register();
     swiperEl.current.breakpoints = {
-      1280: {
+      1024: {
         slidesPerView: 3,
         spaceBetween: 16,
       },
-      1024: {
+      640: {
         slidesPerView: 2,
         spaceBetween: 16,
       },
-      300: {
+      500: {
         slidesPerView: 1,
       },
     };
     swiperEl.current.pagination = {
       clickable: true,
-      bulletActiveClass: "swiper-bullet",
+      // bulletActiveClass: ".swiper-bullet-active",
+    };
+    swiperEl.current.mousewheel = {
+      releaseOnEdges: true,
     };
   }, []);
 
   return (
     <Container id="packages-section">
       <div className="flex flex-col gap-6">
-        <h2 className="text-secondary-dark text-5xl font-bold tracking-tight text-center mb-4">
+        <h2 className="text-secondary-dark sm:text-5xl text-4xl font-bold tracking-tight text-center mb-4">
           Elige un paquete para tu evento!
         </h2>
         <Menu />
-        <div className="flex items-center gap-4 relative">
-          <button
+        <div>
+          {/* <button
             className="bg-secondary-medium w-12 h-12 absolute -left-16 rounded-full font-bold"
             onClick={handlePreviousSlide}
           >
             &larr;
-          </button>
-          <swiper-container ref={swiperEl}>
+          </button> */}
+          <swiper-container
+            mousewheel
+            style={{
+              "--swiper-pagination-color": "#b3525f",
+              "--swiper-pagination-bottom": "0",
+              height: "660px",
+            }}
+            ref={swiperEl}
+          >
             {PACKAGES.map(({ title, groupSize, options }) => (
               <swiper-slide key={title}>
                 <Package
@@ -62,12 +73,12 @@ const Packages = () => {
               </swiper-slide>
             ))}
           </swiper-container>
-          <button
+          {/* <button
             className="bg-secondary-medium w-12 h-12 absolute -right-16 rounded-full font-bold"
             onClick={handleNextSlide}
           >
             &rarr;
-          </button>
+          </button> */}
         </div>
       </div>
     </Container>
