@@ -40,7 +40,7 @@ const EventsForm = () => {
       ).options;
       setTitle(title);
       setPackageSelectedOptions(options);
-      formRef.current.style.transform = "translateX(0)";
+      // formRef.current.style.transform = "translateX(0)";
     }
   }, [router.isReady]);
 
@@ -110,7 +110,7 @@ const EventsForm = () => {
         Compártenos la información de tu evento
       </h1>
       <div
-        className="grid xl:grid-cols-2 items-center justify-items-center shadow-xl mb-8 rounded-xl  overflow-hidden -translate-x-full transition-all duration-700"
+        className="grid xl:grid-cols-2 items-center justify-items-center shadow-xl mb-8 rounded-xl  overflow-hidden animate-fade-right animate-once animate-duration-1000 animate-ease-linear"
         ref={formRef}
       >
         <form
@@ -272,7 +272,7 @@ const EventsForm = () => {
         </form>
         <figure className="p-12 relative items-center justify-center justify-self-stretch self-stretch bg-gradient-to-br from-secondary-medium to-secondary-dark xl:flex hidden">
           <img
-            className="aspect-[402/401] w-full z-10"
+            className="aspect-[402/401] w-full z-10 animate-rotate-y animate-once animate-duration-1000 animate-delay-500"
             src="https://res.cloudinary.com/efrainchacon/image/upload/f_auto/v1682529858/tacos_de_canasta_ciel_chacon/IMG-20230419-WA0026_1_nskbmc-removebg-preview_copyrecorte_mihnvb.png"
             alt="Logo del negocio"
           />
