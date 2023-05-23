@@ -9,6 +9,7 @@ const EventsForm = () => {
   const router = useRouter();
   const formRef = useRef(null);
   const [packageSelectedOptions, setPackageSelectedOptions] = useState([]);
+  const [tacosForEachPerson, setTacosForEachPerson] = useState(4);
   const [title, setTitle] = useState("");
   const [formData, setFormData] = useState({
     name: "",
@@ -26,7 +27,7 @@ const EventsForm = () => {
     place: "Un lugar es requerido",
     people: "La cantidad de personas es requerida",
     tacos: "La cantidad de tacos es requerida",
-    flavors: "Mínimo un guiso es requerido",
+    flavors: "Mínimo cuatro guisos es requerido",
   });
   const [showErrors, setShowErrors] = useState(false);
   const [showConfirmationModal, setShowConfirmationModal] = useState(false);
@@ -69,10 +70,10 @@ const EventsForm = () => {
     if (data.tacos.length === 0)
       newError["tacos"] = "La cantidad de tacos es requerida";
     //flavors validation
-    if (data.flavors.some((el) => typeof el !== "undefined"))
+    if (data.flavors.filter((el) => typeof el !== "undefined").length >= 4)
       newError["flavors"] = "";
-    if (data.flavors.every((el) => typeof el === "undefined"))
-      newError["flavors"] = "Al menos un guiso es requerido";
+    if (data.flavors.filter((el) => typeof el !== "undefined").length < 4)
+      newError["flavors"] = "Mínimo cuatro guisos es requerido";
 
     setError(newError);
   };
@@ -82,7 +83,14 @@ const EventsForm = () => {
     const { position } = dataset;
     const newFormData = { ...formData };
     const dealingWithFlavors = name === "flavors";
-    if (dealingWithFlavors) {
+    const dealingWithTacos = name === "tacos";
+    if (dealingWithTacos) {
+      const [amountOfFlavors] = packageSelectedOptions
+        .find((option) => option.tacos === value)
+        .tacosForEach.split(" ");
+      setTacosForEachPerson(Number(amountOfFlavors));
+      newFormData[name] = value;
+    } else if (dealingWithFlavors) {
       const newFlavors =
         value === "default"
           ? newFormData[name].toSpliced(position, 1, undefined)
@@ -182,6 +190,8 @@ const EventsForm = () => {
                 className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]"
               />
             </div>
+          </fieldset>
+          <fieldset className="flex flex-col sm:gap-12 gap-4">
             <div className="flex flex-col gap-2">
               <label
                 className="font-bold sm:text-2xl text-xl"
@@ -202,8 +212,6 @@ const EventsForm = () => {
                 className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]"
               />
             </div>
-          </fieldset>
-          <fieldset className="flex flex-col sm:gap-12 gap-4">
             <div className="flex flex-col gap-2">
               <label
                 className="font-bold sm:text-2xl text-xl"
@@ -246,25 +254,27 @@ const EventsForm = () => {
                 </div>
               ))}
             </div>
-            <div className="flex flex-col gap-2">
-              <label className="font-bold sm:text-2xl text-xl">
-                Elige mínimo 1 guiso
-              </label>
-              {error.flavors.length > 0 && showErrors && (
-                <p className="text-red-500 text-lg">{error.flavors}</p>
-              )}
-              <ul className="flex flex-col gap-2">
-                {[0, 1, 2, 3].map((el) => (
+          </fieldset>
+          <fieldset className="flex flex-col gap-2 col-span-full">
+            <label className="font-bold sm:text-2xl text-xl">
+              Elige mínimo 4 guisos
+            </label>
+            {error.flavors.length > 0 && showErrors && (
+              <p className="text-red-500 text-lg">{error.flavors}</p>
+            )}
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+              {Array(tacosForEachPerson)
+                .fill(undefined)
+                .map((el, i) => (
                   <MenuDropdownList
-                    key={el}
+                    key={i}
                     name="flavors"
-                    position={el}
+                    position={i}
                     selectedFlavors={formData.flavors}
                     handleInputChange={handleInputChange}
                   />
                 ))}
-              </ul>
-            </div>
+            </ul>
           </fieldset>
           <button className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 px-10 text-white col-span-full sm:text-2xl text-xl">
             Confirmar
