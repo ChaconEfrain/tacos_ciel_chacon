@@ -174,4 +174,4 @@ export const TRADUCTIONS = {
   flavors: "Guisos",
 };
 
-export const MAX_FLAVORS_AMOUNT = 4;
+export const MAX_FLAVORS_AMOUNT = 6;
