@@ -1,15 +1,15 @@
 import { MENU } from "@/constants";
 import React, { useState } from "react";
-import MenuListDesktop from "./MenuListDesktop";
+import MenuList from "./MenuList";
 
 const Menu = () => {
   const [menuLength] = useState(MENU.length);
   return (
-    <article className="grid grid-cols-3 justify-items-center text-xl gap-y-4 mb-6">
-      <p className="col-[1/-1] justify-self-start text-3xl font-semibold">
+    <article className="sm:text-xl text-lg mb-6 flex flex-col gap-6">
+      <p className="sm:text-3xl text-2xl text-center lg:text-start font-semibold">
         Puedes escoger hasta 4 guisos de nuestro delicioso menu
       </p>
-      <MenuListDesktop menuLength={menuLength} />
+      <MenuList menuLength={menuLength} />
     </article>
   );
 };
