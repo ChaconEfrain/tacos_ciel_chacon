@@ -6,8 +6,8 @@ import Promotion from "./Promotion";
 const Promotions = () => {
   return (
     <Container>
-      <div className="grid lg:grid-cols-[45fr_55fr] gap-x-4 gap-y-8 justify-items-center">
-        <h2 className="text-secondary-dark sm:text-5xl text-4xl font-bold tracking-tight col-span-full xl:justify-self-start">
+      <div className="grid lg:grid-cols-[45fr_55fr] gap-x-4 gap-y-8 justify-items-center items-center">
+        <h2 className="text-secondary-dark sm:text-5xl text-4xl font-bold tracking-tight col-span-full lg:justify-self-start">
           Conoce nuestras promociones!
         </h2>
         <div className="flex flex-col gap-10 lg:px-6 sm:w-[70%] lg:w-full">
