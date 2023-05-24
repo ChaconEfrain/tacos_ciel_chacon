@@ -5,6 +5,7 @@ import Packages from "@/components/Packages";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { useEffect, useState } from "react";
 import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -39,6 +40,7 @@ export default function Home() {
         <Packages />
         {showScrollButton && <ScrollToTopButton handleClick={scrollToTop} />}
       </main>
+      <Footer />
     </>
   );
 }
