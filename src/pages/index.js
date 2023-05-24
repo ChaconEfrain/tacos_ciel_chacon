@@ -2,8 +2,22 @@ import Head from "next/head";
 import Hero from "@/components/Hero";
 import Promotions from "@/components/Promotions";
 import Packages from "@/components/Packages";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [showScrollButton, setShowScrollButton] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) setShowScrollButton(true);
+      else setShowScrollButton(false);
+    });
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behaviour: "smooth" });
+  };
+
   return (
     <>
       <Head>
@@ -17,6 +31,7 @@ export default function Home() {
         <Hero />
         <Promotions />
         <Packages />
+        {showScrollButton && <ScrollToTopButton handleClick={scrollToTop} />}
       </main>
     </>
   );
