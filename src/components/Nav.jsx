@@ -20,7 +20,12 @@ const Nav = () => {
             {NAV_MENU.map(({ label, pointsTo, icon }) => (
               <li key={label}>
                 {pointsTo.includes("https") ? (
-                  <a href={pointsTo} target="_blank" title={label}>
+                  <a
+                    href={pointsTo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={label}
+                  >
                     {icon}
                   </a>
                 ) : (
