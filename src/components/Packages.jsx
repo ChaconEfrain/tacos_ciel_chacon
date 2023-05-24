@@ -41,7 +41,7 @@ const Packages = () => {
   }, []);
 
   return (
-    <Container id="packages-section">
+    <Container id="eventos">
       <div className="flex flex-col gap-6">
         <h2 className="text-secondary-dark sm:text-5xl text-4xl font-bold tracking-tight text-center mb-4">
           Elige un paquete para tu evento!
