@@ -3,7 +3,7 @@ import React from "react";
 const ScrollToTopButton = ({ handleClick }) => {
   return (
     <button
-      className="rounded-full w-14 h-14 bg-secondary-dark/80 text-secondary-light text-2xl flex justify-center items-center fixed bottom-8 right-8"
+      className="rounded-full w-14 h-14 bg-secondary-dark/80 text-secondary-light text-2xl flex justify-center items-center fixed bottom-8 right-8 z-50"
       onClick={handleClick}
     >
       <svg
