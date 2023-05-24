@@ -1,4 +1,4 @@
-import { Couple, Facebook, Family, Person, WhatsApp } from "@/icons";
+import { Couple, Facebook, Family, Instagram, Person, WhatsApp } from "@/icons";
 
 export const NAV_MENU = [
   {
@@ -20,6 +20,11 @@ export const NAV_MENU = [
     label: "Facebook",
     pointsTo: "https://www.facebook.com/profile.php?id=100085831440625",
     icon: <Facebook className="w-8 h-8" />,
+  },
+  {
+    label: "Instagram",
+    pointsTo: "https://www.instagram.com/lacanastayucateca/",
+    icon: <Instagram className="w-8 h-8" />,
   },
 ];
 
