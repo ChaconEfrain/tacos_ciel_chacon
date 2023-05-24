@@ -23,6 +23,10 @@ export default function Home() {
     <>
       <Head>
         <title>Tacos de canasta &quot;La canasta yucateca&quot;</title>
+        <meta
+          name="description"
+          content="Deliciosos tacos de canasta ubicados en el fraccionamiento las américas de Mérida, Yucatán. Puedes hacer pedidos para eventos sociales con servicio ó sin servicio incluído, al igual que servicio a domicilio ó disfrutar en nuestro punto de venta."
+        />
         <link
           rel="shortcut icon"
           href="https://res.cloudinary.com/efrainchacon/image/upload/f_auto/v1682529858/tacos_de_canasta_ciel_chacon/IMG-20230419-WA0026_1_nskbmc-removebg-preview_copyrecorte_mihnvb.png"
