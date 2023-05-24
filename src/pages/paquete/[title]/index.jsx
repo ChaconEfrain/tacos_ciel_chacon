@@ -105,12 +105,12 @@ const EventsForm = () => {
       newFormData[name] = newFlavors;
     } else newFormData[name] = value;
     setFormData(newFormData);
+    validateFormData(newFormData);
     if (showErrors) setShowErrors(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    validateFormData(formData);
     const anyErrors = Object.values(error).some((value) => value.length > 0);
     if (anyErrors) {
       setShowErrors(true);
@@ -124,12 +124,10 @@ const EventsForm = () => {
       <h1 className="sm:text-5xl text-4xl font-bold text-secondary-dark my-8 sm:text-center mx-4">
         Compártenos la información de tu evento
       </h1>
-      <div
-        className="grid xl:grid-cols-2 items-center justify-items-center shadow-xl mb-8 rounded-xl  overflow-hidden animate-fade-right animate-once animate-duration-1000 animate-ease-linear"
-        ref={formRef}
-      >
+      <div className="grid xl:grid-cols-2 max-w-7xl items-center justify-items-center shadow-xl mb-8 rounded-xl overflow-hidden animate-fade-right animate-once animate-duration-1000 animate-ease-linear">
         <form
           className="grid sm:grid-cols-2 gap-x-4 gap-y-10 p-8"
+          ref={formRef}
           onSubmit={handleSubmit}
         >
           <header className="col-span-full flex flex-col gap-2 justify-self-start items-start">
@@ -298,8 +296,11 @@ const EventsForm = () => {
       <EventDataConfirmation
         title={title}
         eventData={formData}
+        setFormData={setFormData}
+        setError={setError}
         showModal={setShowConfirmationModal}
         isShowing={showConfirmationModal}
+        form={formRef}
       />
     </main>
   );
