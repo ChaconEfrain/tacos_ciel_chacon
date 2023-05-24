@@ -1,4 +1,27 @@
-import { Couple, Family, Person } from "@/icons";
+import { Couple, Facebook, Family, Person, WhatsApp } from "@/icons";
+
+export const NAV_MENU = [
+  {
+    label: "Promociones",
+    pointsTo: "#promociones",
+    icon: null,
+  },
+  {
+    label: "Eventos",
+    pointsTo: "#eventos",
+    icon: null,
+  },
+  {
+    label: "WhatsApp",
+    pointsTo: "https://api.whatsapp.com/send?phone=529992787091",
+    icon: <WhatsApp className="w-8 h-8" />,
+  },
+  {
+    label: "Facebook",
+    pointsTo: "https://www.facebook.com/profile.php?id=100085831440625",
+    icon: <Facebook className="w-8 h-8" />,
+  },
+];
 
 export const PROMOTIONS = [
   {
