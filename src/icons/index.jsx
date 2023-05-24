@@ -360,6 +360,27 @@ export const Facebook = ({ className }) => {
   );
 };
 
+export const Instagram = ({ className }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      className={className}
+      viewBox="0 0 24 24"
+    >
+      <path stroke="none" d="M0 0h24v24H0z"></path>
+      <path d="M4 8a4 4 0 014-4h8a4 4 0 014 4v8a4 4 0 01-4 4H8a4 4 0 01-4-4z"></path>
+      <path d="M9 12a3 3 0 106 0 3 3 0 10-6 0M16.5 7.5v.01"></path>
+    </svg>
+  );
+};
+
 export const Location = ({ className }) => {
   return (
     <svg
@@ -380,6 +401,46 @@ export const Location = ({ className }) => {
         stroke="none"
         d="M18.364 4.636a9 9 0 01.203 12.519l-.203.21-4.243 4.242a3 3 0 01-4.097.135l-.144-.135-4.244-4.243A9 9 0 0118.364 4.636zM12 8a3 3 0 100 6 3 3 0 000-6z"
       ></path>
+    </svg>
+  );
+};
+
+export const BurgerMenu = ({ className }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      className={className}
+      viewBox="0 0 24 24"
+    >
+      <path stroke="none" d="M0 0h24v24H0z"></path>
+      <path d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  );
+};
+
+export const CloseButton = ({ className }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      className={className}
+      viewBox="0 0 24 24"
+    >
+      <path stroke="none" d="M0 0h24v24H0z"></path>
+      <path d="M18 6L6 18M6 6l12 12"></path>
     </svg>
   );
 };
