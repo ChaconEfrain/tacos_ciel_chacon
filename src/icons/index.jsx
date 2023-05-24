@@ -319,6 +319,71 @@ export const Girl = ({ className }) => {
   );
 };
 
+export const WhatsApp = ({ className }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      className={className}
+      viewBox="0 0 24 24"
+    >
+      <path stroke="none" d="M0 0h24v24H0z"></path>
+      <path d="M3 21l1.65-3.8a9 9 0 113.4 2.9L3 21"></path>
+      <path d="M9 10a.5.5 0 001 0V9a.5.5 0 00-1 0v1a5 5 0 005 5h1a.5.5 0 000-1h-1a.5.5 0 000 1"></path>
+    </svg>
+  );
+};
+
+export const Facebook = ({ className }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      className={className}
+      viewBox="0 0 24 24"
+    >
+      <path stroke="none" d="M0 0h24v24H0z"></path>
+      <path d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 011-1h3V3h-3a5 5 0 00-5 5v2H7"></path>
+    </svg>
+  );
+};
+
+export const Location = ({ className }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      className={className}
+      viewBox="0 0 24 24"
+    >
+      <path stroke="none" d="M0 0h24v24H0z"></path>
+      <path
+        fill="currentColor"
+        stroke="none"
+        d="M18.364 4.636a9 9 0 01.203 12.519l-.203.21-4.243 4.242a3 3 0 01-4.097.135l-.144-.135-4.244-4.243A9 9 0 0118.364 4.636zM12 8a3 3 0 100 6 3 3 0 000-6z"
+      ></path>
+    </svg>
+  );
+};
+
 // export const Money = ({ className }) => (
 //   <svg
 //     xmlns="http://www.w3.org/2000/svg"
