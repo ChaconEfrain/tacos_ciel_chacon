@@ -29,7 +29,7 @@ const Promotions = () => {
         </div>
         <figure className="xl:w-[85%] self-center justify-self-center hidden lg:block">
           <img
-            className="rounded-3xl"
+            className="rounded-3xl aspect-[1080/1620]"
             src="https://res.cloudinary.com/efrainchacon/image/upload/f_auto/g_auto/v1681867756/tacos_de_canasta_ciel_chacon/FB_IMG_1666010222566_081550_1_enykze.jpg"
             alt="Tacos de canasta con salsa"
           />

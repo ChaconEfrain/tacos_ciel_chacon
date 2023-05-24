@@ -13,7 +13,7 @@ const Nav = () => {
         <img
           src="https://res.cloudinary.com/efrainchacon/image/upload/f_auto/v1682529858/tacos_de_canasta_ciel_chacon/IMG-20230419-WA0026_1_nskbmc-removebg-preview_copyrecorte_mihnvb.png"
           alt="Logo del negocio"
-          className="sm:w-32 w-28 sm:h-32 h-28"
+          className="sm:w-32 w-28 sm:h-32 h-28 aspect-[402/401]"
         />
         <nav className="sm:block hidden text-white">
           <ul className="flex gap-4 text-2xl">
