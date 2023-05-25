@@ -48,14 +48,25 @@ const Packages = () => {
         </h2>
         <Menu />
         <div>
-          {/* <button
-            className="bg-secondary-medium w-12 h-12 absolute -left-16 rounded-full font-bold"
-            onClick={handlePreviousSlide}
-          >
-            &larr;
-          </button> */}
+          <div className="sm:flex hidden justify-between px-6 mb-2">
+            <button
+              title="Anterior"
+              className="bg-secondary-medium md:w-80 py-1 sm:w-64 rounded-full font-bold text-white text-2xl"
+              onClick={handlePreviousSlide}
+            >
+              {/* &larr; */}
+              Anterior
+            </button>
+            <button
+              title="Siguiente"
+              className="bg-secondary-medium md:w-80 py-1 sm:w-64 rounded-full font-bold text-white text-2xl"
+              onClick={handleNextSlide}
+            >
+              {/* &rarr; */}
+              Siguiente
+            </button>
+          </div>
           <swiper-container
-            mousewheel
             style={{
               "--swiper-pagination-color": "#b3525f",
               "--swiper-pagination-bottom": "0",
@@ -73,12 +84,6 @@ const Packages = () => {
               </swiper-slide>
             ))}
           </swiper-container>
-          {/* <button
-            className="bg-secondary-medium w-12 h-12 absolute -right-16 rounded-full font-bold"
-            onClick={handleNextSlide}
-          >
-            &rarr;
-          </button> */}
         </div>
       </div>
     </Container>
