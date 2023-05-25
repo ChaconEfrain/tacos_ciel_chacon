@@ -11,7 +11,7 @@ const Footer = () => {
       <div className="grid sm:grid-cols-2 place-content-center sm:justify-items-center max-w-2xl mx-auto gap-y-4">
         <div className="flex flex-col gap-2">
           <h4 className="font-bold">Contacto</h4>
-          <address>
+          <address className="not-italic">
             <ul className="flex flex-col gap-1 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:gap-2">
               <li>
                 <a
