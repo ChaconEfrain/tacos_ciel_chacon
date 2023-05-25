@@ -34,8 +34,8 @@ export const PROMOTIONS = [
     description:
       "Si buscas algo rápido, con buen sabor y a un excelente precio, la promoción personal es ideal para ti!",
     tacos: "4 tacos",
-    drinks: "1 refresco",
-    price: "$55",
+    drinks: "1 bebida",
+    price: "$58",
     icon: <Person />,
   },
   {
@@ -43,8 +43,8 @@ export const PROMOTIONS = [
     description:
       "El paquete perfecto para compartir con tu amigo/a, pareja ó con quien tú quieras!",
     tacos: "8 tacos",
-    drinks: "2 refrescos",
-    price: "$105",
+    drinks: "2 bebidas",
+    price: "$114",
     icon: <Couple />,
   },
   {
@@ -52,13 +52,34 @@ export const PROMOTIONS = [
     description:
       "¿No sabes qué cocinar para tu familia? Con la promoción familiar todos quedan satisfechos, hasta tu bolsillo!",
     tacos: "20 tacos",
-    drinks: "4 refrescos",
-    price: "$205",
+    drinks: "4 bebidas",
+    price: "$226",
     icon: <Family />,
   },
 ];
 
 export const PACKAGES = [
+  {
+    title: "Pa' el antojo",
+    groupSize: "10 personas",
+    options: [
+      {
+        tacos: "40 tacos",
+        tacosForEach: "4 tacos por persona",
+        price: "$480",
+      },
+      {
+        tacos: "50 tacos",
+        tacosForEach: "5 tacos por persona",
+        price: "$600",
+      },
+      {
+        tacos: "60 tacos",
+        tacosForEach: "6 tacos por persona",
+        price: "$720",
+      },
+    ],
+  },
   {
     title: "Pa' que pruebes",
     groupSize: "20 personas",
@@ -66,17 +87,17 @@ export const PACKAGES = [
       {
         tacos: "80 tacos",
         tacosForEach: "4 tacos por persona",
-        price: "$960",
+        price: "$1,360",
       },
       {
         tacos: "100 tacos",
         tacosForEach: "5 tacos por persona",
-        price: "$1,200",
+        price: "$1,600",
       },
       {
         tacos: "120 tacos",
         tacosForEach: "6 tacos por persona",
-        price: "$1,440",
+        price: "$1,840",
       },
     ],
   },
@@ -87,17 +108,17 @@ export const PACKAGES = [
       {
         tacos: "120 tacos",
         tacosForEach: "4 tacos por persona",
-        price: "$1,440",
+        price: "$1,840",
       },
       {
         tacos: "150 tacos",
         tacosForEach: "5 tacos por persona",
-        price: "$1,650",
+        price: "$2,050",
       },
       {
         tacos: "180 tacos",
         tacosForEach: "6 tacos por persona",
-        price: "$1,980",
+        price: "$2,380",
       },
     ],
   },
@@ -108,17 +129,17 @@ export const PACKAGES = [
       {
         tacos: "160 tacos",
         tacosForEach: "4 tacos por persona",
-        price: "$1,760",
+        price: "$2,160",
       },
       {
         tacos: "200 tacos",
         tacosForEach: "5 tacos por persona",
-        price: "$2,200",
+        price: "$2,600",
       },
       {
         tacos: "240 tacos",
         tacosForEach: "6 tacos por persona",
-        price: "$2,640",
+        price: "$3,040",
       },
     ],
   },
@@ -129,17 +150,17 @@ export const PACKAGES = [
       {
         tacos: "200 tacos",
         tacosForEach: "4 tacos por persona",
-        price: "$2,200",
+        price: "$2,600",
       },
       {
         tacos: "250 tacos",
         tacosForEach: "5 tacos por persona",
-        price: "$2,500",
+        price: "$2,900",
       },
       {
         tacos: "300 tacos",
         tacosForEach: "6 tacos por persona",
-        price: "$3,000",
+        price: "$3,400",
       },
     ],
   },
@@ -150,17 +171,101 @@ export const PACKAGES = [
       {
         tacos: "240 tacos",
         tacosForEach: "4 tacos por persona",
-        price: "$2,400",
+        price: "$2,800",
       },
       {
         tacos: "300 tacos",
         tacosForEach: "5 tacos por persona",
-        price: "$3,000",
+        price: "$3,400",
       },
       {
         tacos: "360 tacos",
         tacosForEach: "6 tacos por persona",
+        price: "$4,000",
+      },
+    ],
+  },
+  {
+    title: "Pa' que disfrutes",
+    groupSize: "70 personas",
+    options: [
+      {
+        tacos: "280 tacos",
+        tacosForEach: "4 tacos por persona",
+        price: "$3,200",
+      },
+      {
+        tacos: "350 tacos",
+        tacosForEach: "5 tacos por persona",
+        price: "$3,900",
+      },
+      {
+        tacos: "420 tacos",
+        tacosForEach: "6 tacos por persona",
+        price: "$4,600",
+      },
+    ],
+  },
+  {
+    title: "Pa' que te llenes",
+    groupSize: "80 personas",
+    options: [
+      {
+        tacos: "320 tacos",
+        tacosForEach: "4 tacos por persona",
         price: "$3,600",
+      },
+      {
+        tacos: "400 tacos",
+        tacosForEach: "5 tacos por persona",
+        price: "$4,400",
+      },
+      {
+        tacos: "480 tacos",
+        tacosForEach: "6 tacos por persona",
+        price: "$5,200",
+      },
+    ],
+  },
+  {
+    title: "Pa' que te alcance",
+    groupSize: "90 personas",
+    options: [
+      {
+        tacos: "360 tacos",
+        tacosForEach: "4 tacos por persona",
+        price: "$4,000",
+      },
+      {
+        tacos: "450 tacos",
+        tacosForEach: "5 tacos por persona",
+        price: "$4,900",
+      },
+      {
+        tacos: "540 tacos",
+        tacosForEach: "6 tacos por persona",
+        price: "$5,800",
+      },
+    ],
+  },
+  {
+    title: "Pa' que te pidan",
+    groupSize: "100 personas",
+    options: [
+      {
+        tacos: "400 tacos",
+        tacosForEach: "4 tacos por persona",
+        price: "$4,400",
+      },
+      {
+        tacos: "500 tacos",
+        tacosForEach: "5 tacos por persona",
+        price: "$5,400",
+      },
+      {
+        tacos: "600 tacos",
+        tacosForEach: "6 tacos por persona",
+        price: "$6,400",
       },
     ],
   },
