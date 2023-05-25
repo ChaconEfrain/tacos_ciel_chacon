@@ -3,7 +3,7 @@ import { Location } from "@/icons";
 const Hero = () => {
   return (
     <div className="bg-[url(https://res.cloudinary.com/efrainchacon/image/upload/f_auto/g_auto/v1681867759/tacos_de_canasta_ciel_chacon/IMG_20230415_075445_1_h6vn8m.jpg)] bg-cover bg-no-repeat bg-bottom">
-      <div className="h-screen bg-gradient-to-r from-primary-dark/60 to-primary-dark/60" />
+      <div className="h-screen bg-gradient-to-r from-primary-dark/60 to-primary-dark/70" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:w-[38rem] sm:w-[32rem] w-[85%] flex flex-col gap-8">
         <header className="flex flex-col gap-4">
           <h1 className="xl:text-7xl md:text-6xl sm:text-5xl text-4xl font-bold text-secondary-medium -tracking-[0.5px]">
