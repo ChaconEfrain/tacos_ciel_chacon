@@ -1,3 +1,4 @@
+import { ADMIN_EMAIL } from "@/constants";
 import { Email, Facebook, Instagram, Location, WhatsApp } from "@/icons";
 import React from "react";
 
@@ -18,7 +19,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Email /> cielmchacong97@gmail.com
+                <Email /> {ADMIN_EMAIL}
               </a>
             </li>
             <li>
