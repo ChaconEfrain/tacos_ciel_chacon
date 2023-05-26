@@ -1,12 +1,9 @@
-import { NAV_MENU } from "@/constants";
+import useNavMobile from "@/hooks/useNavMobile";
 import { BurgerMenu, CloseButton } from "@/icons";
-import React, { useState } from "react";
+import { NAV_MENU } from "@/constants";
 
 const Nav = () => {
-  const [showNavMobile, setShowNavMobile] = useState(false);
-
-  const handleNavMobile = () => setShowNavMobile(!showNavMobile);
-
+  const { showNavMobile, handleNavMobile } = useNavMobile();
   return (
     <>
       <header className="flex justify-between items-center absolute top-0 w-full text-secondary-light sm:py-8 sm:px-14 py-4 px-6 font-bold tracking-wide">
