@@ -1,44 +1,11 @@
-import { useEffect, useRef } from "react";
-import { register } from "swiper/element/bundle";
 import Container from "./Container";
 import Package from "./Package";
 import Menu from "./Menu";
 import { PACKAGES } from "@/constants";
+import useSwiper from "@/hooks/useSwiper";
 
 const Packages = () => {
-  const swiperEl = useRef(null);
-
-  const handleNextSlide = () => {
-    swiperEl.current.swiper.slideNext();
-  };
-
-  const handlePreviousSlide = () => {
-    swiperEl.current.swiper.slidePrev();
-  };
-
-  useEffect(() => {
-    register();
-    swiperEl.current.breakpoints = {
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 16,
-      },
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 16,
-      },
-      500: {
-        slidesPerView: 1,
-      },
-    };
-    swiperEl.current.pagination = {
-      clickable: true,
-      // bulletActiveClass: ".swiper-bullet-active",
-    };
-    swiperEl.current.mousewheel = {
-      releaseOnEdges: true,
-    };
-  }, []);
+  const { swiperEl, handleNextSlide, handlePreviousSlide } = useSwiper();
 
   return (
     <Container id="eventos">
