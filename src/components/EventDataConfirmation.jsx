@@ -9,6 +9,8 @@ const EventDataConfirmation = ({
   title,
   showModal,
   isShowing,
+  initialData,
+  initialError,
 }) => {
   const { editForm, handleSendInfo, whatsappMessage } = useEventData({
     eventData,
@@ -17,6 +19,8 @@ const EventDataConfirmation = ({
     setError,
     showModal,
     title,
+    initialData,
+    initialError,
   });
 
   return (
@@ -28,7 +32,8 @@ const EventDataConfirmation = ({
       >
         <div className="flex flex-col gap-2">
           <p className="sm:text-2xl text-xl">
-            Corrobora la información de tu evento
+            Corrobora la información de tu{" "}
+            {`${eventData.time ? "evento" : "pedido"}`}
           </p>
           <ul className="sm:ml-6">
             {Object.entries(eventData).map(([key, value]) => (

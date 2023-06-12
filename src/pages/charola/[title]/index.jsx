@@ -2,9 +2,9 @@ import Link from "next/link";
 import useEventForm from "@/hooks/useEventForm";
 import MenuDropdownList from "@/components/MenuDropdownList";
 import EventDataConfirmation from "@/components/EventDataConfirmation";
-import { INITIAL_EVENT_DATA, INITIAL_EVENT_ERRORS } from "@/constants";
+import { INITIAL_CHAROLA_DATA, INITIAL_CHAROLA_ERRORS } from "@/constants";
 
-const EventsForm = () => {
+const CharolaForm = () => {
   const {
     handleSubmit,
     handleInputChange,
@@ -19,11 +19,11 @@ const EventsForm = () => {
     setFormData,
     setError,
     packageSelectedOptions,
-  } = useEventForm(INITIAL_EVENT_ERRORS, INITIAL_EVENT_DATA);
+  } = useEventForm(INITIAL_CHAROLA_ERRORS, INITIAL_CHAROLA_DATA);
   return (
     <main className="flex flex-col justify-center items-center sm:text-xl text-lg text-primary-dark font-medium relative">
       <h1 className="sm:text-5xl text-4xl font-bold text-secondary-dark my-8 sm:text-center mx-4">
-        Compártenos la información de tu evento
+        Compártenos la información de tu pedido
       </h1>
       <div className="grid xl:grid-cols-2 max-w-7xl items-center justify-items-center shadow-xl mb-8 rounded-xl overflow-hidden animate-fade-right animate-once animate-duration-1000 animate-ease-linear">
         <form
@@ -53,6 +53,7 @@ const EventsForm = () => {
                 id="input-nombre"
                 name="name"
                 value={formData.name}
+                defaultValue=""
                 type="text"
                 placeholder="Juán Pérez"
                 className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]"
@@ -77,47 +78,8 @@ const EventsForm = () => {
                 className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]"
               />
             </div>
-            <div className="flex flex-col gap-2">
-              <label
-                className="font-bold sm:text-2xl text-xl"
-                htmlFor="input-hora"
-              >
-                Hora del evento
-              </label>
-              {error.time.length > 0 && showErrors && (
-                <p className="text-red-500 text-lg">{error.time}</p>
-              )}
-              <input
-                onChange={handleInputChange}
-                id="input-hora"
-                name="time"
-                value={formData.time}
-                type="time"
-                className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]"
-              />
-            </div>
           </fieldset>
           <fieldset className="flex flex-col sm:gap-12 gap-4">
-            <div className="flex flex-col gap-2">
-              <label
-                className="font-bold sm:text-2xl text-xl"
-                htmlFor="input-lugar"
-              >
-                Lugar del evento
-              </label>
-              {error.place.length > 0 && showErrors && (
-                <p className="text-red-500 text-lg">{error.place}</p>
-              )}
-              <input
-                onChange={handleInputChange}
-                id="input-lugar"
-                name="place"
-                value={formData.place}
-                type="text"
-                placeholder="Calle 48 #264..."
-                className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]"
-              />
-            </div>
             <div className="flex flex-col gap-2">
               <label
                 className="font-bold sm:text-2xl text-xl"
@@ -133,6 +95,7 @@ const EventsForm = () => {
                 id="input-personas"
                 name="people"
                 value={formData.people}
+                defaultValue=""
                 type="number"
                 min={0}
                 placeholder="60"
@@ -202,11 +165,11 @@ const EventsForm = () => {
         showModal={setShowConfirmationModal}
         isShowing={showConfirmationModal}
         form={formRef}
-        initialData={INITIAL_EVENT_DATA}
-        initialError={INITIAL_EVENT_ERRORS}
+        initialData={INITIAL_CHAROLA_DATA}
+        initialError={INITIAL_CHAROLA_ERRORS}
       />
     </main>
   );
 };
 
-export default EventsForm;
+export default CharolaForm;
