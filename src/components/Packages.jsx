@@ -1,8 +1,8 @@
+import useSwiper from "@/hooks/useSwiper";
 import Container from "./Container";
 import Package from "./Package";
 import Menu from "./Menu";
 import { PACKAGES } from "@/constants";
-import useSwiper from "@/hooks/useSwiper";
 
 const Packages = () => {
   const { swiperEl, handleNextSlide, handlePreviousSlide } = useSwiper();
