@@ -21,11 +21,11 @@ const EventsForm = () => {
     packageSelectedOptions,
   } = useEventForm(INITIAL_EVENT_ERRORS, INITIAL_EVENT_DATA);
   return (
-    <main className="flex flex-col justify-center items-center sm:text-xl text-lg text-primary-dark font-medium relative">
+    <main className="flex flex-col justify-center items-center sm:text-xl text-lg text-primary-dark font-medium relative h-screen">
       <h1 className="sm:text-5xl text-4xl font-bold text-secondary-dark my-8 sm:text-center mx-4">
         Compártenos la información de tu evento
       </h1>
-      <div className="grid xl:grid-cols-2 max-w-7xl items-center justify-items-center shadow-xl mb-8 rounded-xl overflow-hidden animate-fade-right animate-once animate-duration-1000 animate-ease-linear">
+      <div className="grid xl:grid-cols-2 max-w-7xl items-center justify-items-center shadow-xl mb-8 rounded-xl overflow-scroll sm:overflow-hidden animate-fade-right animate-once animate-duration-1000 animate-ease-linear">
         <form
           className="grid sm:grid-cols-2 gap-x-4 gap-y-10 p-8"
           ref={formRef}
