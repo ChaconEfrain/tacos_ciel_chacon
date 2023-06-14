@@ -1,24 +1,14 @@
+import useScroll from "@/hooks/useScroll";
 import Head from "next/head";
 import Hero from "@/components/Hero";
 import Promotions from "@/components/Promotions";
 import Packages from "@/components/Packages";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
-import { useEffect, useState } from "react";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  const [showScrollButton, setShowScrollButton] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 300) setShowScrollButton(true);
-      else setShowScrollButton(false);
-    });
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behaviour: "smooth" });
-  };
+  const { scrollToTop, showScrollButton } = useScroll();
 
   return (
     <>
@@ -27,6 +17,11 @@ export default function Home() {
         <meta
           name="description"
           content="Deliciosos tacos de canasta ubicados en el fraccionamiento las américas de Mérida, Yucatán. Puedes hacer pedidos para eventos sociales con servicio ó sin servicio incluído, al igual que servicio a domicilio ó disfrutar en nuestro punto de venta."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="keywords"
+          content="tacos de canasta, la canasta yucateca, tacos, tacos de canasta mérida"
         />
         <link
           rel="shortcut icon"

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { MENU } from "@/constants";
+import { COMPLEMENTS, MENU } from "@/constants";
 import { Check } from "@/icons";
 
 const Menu = () => {
-  const [menuLength] = useState(MENU.length);
   return (
     <article className="sm:text-xl text-lg mb-6 flex flex-col items-center gap-6">
       <p className="sm:text-3xl text-2xl text-center lg:text-start font-semibold self-start">
@@ -16,6 +15,16 @@ const Menu = () => {
           </li>
         ))}
       </ul>
+      <footer className="flex flex-col gap-2 text-base sm:text-lg">
+        <p>- Todos los paquetes incluyen lo siguiente:</p>
+        <ul className="flex flex-wrap gap-2 italic">
+          {COMPLEMENTS.map((complement, i, arr) => (
+            <li key={complement}>{`${complement}${
+              i !== arr.length - 1 ? "," : "."
+            }`}</li>
+          ))}
+        </ul>
+      </footer>
     </article>
   );
 };

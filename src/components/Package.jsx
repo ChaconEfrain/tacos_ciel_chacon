@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Girl, Taco } from "@/icons";
 
-const Package = ({ title, groupSize, options }) => {
+const Package = ({ title, groupSize, options, withService }) => {
   return (
     <article className="text-xl relative overflow-hidden flex flex-col gap-6 border-2 rounded-lg border-secondary-medium">
       <header className="flex flex-col gap-4">
@@ -12,7 +12,7 @@ const Package = ({ title, groupSize, options }) => {
       </header>
       <div className="flex flex-col p-6">
         {options.map(({ tacos, tacosForEach, price }, i) => (
-          <section key={price} className="flex flex-col">
+          <section key={price.withService} className="flex flex-col">
             <div className="flex items-center gap-6">
               <ul className="flex flex-col gap-4 w-full">
                 <li className="flex gap-2 items-center justify-between">
@@ -20,7 +20,7 @@ const Package = ({ title, groupSize, options }) => {
                     <Taco className="w-6 h-6" /> {tacos}
                   </span>
                   <strong className="sm:text-5xl text-4xl text-secondary-dark">
-                    {price}
+                    {withService ? price.withService : price.withoutService}
                   </strong>
                 </li>
                 <li className="flex gap-2">
@@ -37,12 +37,21 @@ const Package = ({ title, groupSize, options }) => {
         ))}
       </div>
       <footer className="flex justify-center">
-        <Link
-          href={`/paquete/${title}`}
-          className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 px-10 mb-6 text-white"
-        >
-          Solicitar paquete
-        </Link>
+        {withService ? (
+          <Link
+            href={`/paquete/${title}`}
+            className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 px-10 mb-6 text-white"
+          >
+            Solicitar paquete
+          </Link>
+        ) : (
+          <Link
+            href={`/charola/${title}`}
+            className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 px-10 mb-6 text-white"
+          >
+            Solicitar charola
+          </Link>
+        )}
       </footer>
     </article>
   );

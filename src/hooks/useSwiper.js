@@ -1,9 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { register } from "swiper/element/bundle";
 
-const useSwiper = () => {
-  const swiperEl = useRef(null);
-
+const useSwiper = (swiperEl) => {
   const handleNextSlide = () => {
     swiperEl.current.swiper.slideNext();
   };
@@ -30,12 +28,9 @@ const useSwiper = () => {
     swiperEl.current.pagination = {
       clickable: true,
     };
-    swiperEl.current.mousewheel = {
-      releaseOnEdges: true,
-    };
   }, []);
 
-  return { swiperEl, handleNextSlide, handlePreviousSlide };
+  return { handleNextSlide, handlePreviousSlide };
 };
 
 export default useSwiper;
