@@ -1,6 +1,15 @@
-import { Money, Soda, Taco } from "@/icons";
+import { VALID_DAYS } from "@/constants";
+import { Soda, Taco } from "@/icons";
 
 const Promotion = ({ title, description, tacos, drinks, price, icon }) => {
+  const [day, , , , fullHour] = new Date().toString().split(" ");
+  const [hour, minutes] = fullHour.split(":");
+  const isValidTime =
+    VALID_DAYS.includes(day) &&
+    ((Number(hour) === 7 && Number(minutes) >= 30) ||
+      (Number(hour) > 7 && Number(hour) < 12) ||
+      (Number(hour) === 12 && Number(minutes) === 0));
+
   return (
     <article className="flex flex-col gap-2">
       <header className="flex items-center gap-2">
@@ -34,14 +43,20 @@ const Promotion = ({ title, description, tacos, drinks, price, icon }) => {
             <strong className="sm:text-6xl text-5xl text-secondary-dark sm:inline-block hidden">
               {price}
             </strong>
-            <a
-              href={`https://api.whatsapp.com/send?phone=529992787091&text=Hola! quisiera la promoción *${title}* por favor 😋`}
-              target="_blank"
-              rel="noreferrer"
-              className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 sm:px-16 px-4 text-white sm:text-2xl text-xl inline-block"
-            >
-              Solicitar
-            </a>
+            {isValidTime ? (
+              <a
+                href={`https://api.whatsapp.com/send?phone=529992787091&text=Hola! quisiera la promoción *${title}* por favor 😋`}
+                target="_blank"
+                rel="noreferrer"
+                className="bg-gradient-to-br from-secondary-medium to-secondary-dark font-bold rounded-full py-2 sm:px-16 px-4 text-white sm:text-2xl text-xl inline-block"
+              >
+                Solicitar
+              </a>
+            ) : (
+              <em className="text-lg text-center">
+                Disponible de Martes a Sábado, de 7:30am a 12:00pm
+              </em>
+            )}
           </div>
         </div>
       </div>

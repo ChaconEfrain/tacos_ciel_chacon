@@ -449,3 +449,5 @@ export const INITIAL_CHAROLA_DATA = {
   tacos: "",
   flavors: new Array(MAX_FLAVORS_AMOUNT),
 };
+
+export const VALID_DAYS = ["Tue", "Wed", "Thu", "Fri", "Sat"];
