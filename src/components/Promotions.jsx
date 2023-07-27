@@ -2,8 +2,15 @@
 import { PROMOTIONS } from "@/constants";
 import Container from "./Container";
 import Promotion from "./Promotion";
+import { useState } from "react";
 
 const Promotions = () => {
+  const [chosenPromotion, setChosenPromotion] = useState(() =>
+    PROMOTIONS.reduce(
+      (promos, promo) => ({ ...promos, [promo.title]: false }),
+      {}
+    )
+  );
   return (
     <Container id="promociones">
       <div className="grid lg:grid-cols-[45fr_55fr] gap-x-4 gap-y-8 justify-items-center items-center">
@@ -22,6 +29,8 @@ const Promotions = () => {
                   drinks={drinks}
                   price={price}
                   icon={icon}
+                  chosenPromotion={chosenPromotion}
+                  setChosenPromotion={setChosenPromotion}
                 />
               )
             )}

@@ -154,7 +154,7 @@ const EventsForm = () => {
                     type="radio"
                     name="tacos"
                     value={option.tacos}
-                    className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588]"
+                    className="py-2 px-6 focus:shadow-[0_0_0_2px_#ff7588] accent-secondary-medium"
                   />
                   <label htmlFor={`option-${i}`}>{option.tacos}</label>
                 </div>
