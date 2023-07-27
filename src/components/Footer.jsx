@@ -9,7 +9,7 @@ const Footer = () => {
       <p className="text-center font-bold col-span-full mb-4">
         &copy; Tacos de canasta &quot;La canasta yucateca&quot;, {currentYear}
       </p>
-      <div className="grid sm:grid-cols-2 place-content-center sm:justify-items-center max-w-2xl mx-auto gap-y-4">
+      <div className="grid sm:grid-cols-3 place-content-center sm:justify-items-center max-w-2xl mx-auto gap-y-4">
         <address className="flex flex-col gap-2 not-italic">
           <h4 className="font-bold">Contacto</h4>
           <ul className="flex flex-col gap-1 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:gap-2">
@@ -61,6 +61,29 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <Instagram /> Instagram
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="flex flex-col gap-2">
+          <h4 className="font-bold">Autor intelectual</h4>
+          <ul className="flex flex-col gap-1 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:gap-2">
+            <li>
+              <a
+                href="mailto:efrachaga@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Email /> efrachaga@gmail.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://api.whatsapp.com/send?phone=529999943965"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <WhatsApp /> (999) 994 3965
               </a>
             </li>
           </ul>
