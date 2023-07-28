@@ -1,5 +1,12 @@
 import { ADMIN_EMAIL } from "@/constants";
-import { Email, Facebook, Instagram, Location, WhatsApp } from "@/icons";
+import {
+  Email,
+  Facebook,
+  Instagram,
+  Location,
+  Person,
+  WhatsApp,
+} from "@/icons";
 import React from "react";
 
 const Footer = () => {
@@ -66,8 +73,11 @@ const Footer = () => {
           </ul>
         </div>
         <div className="flex flex-col gap-2">
-          <h4 className="font-bold">Autor intelectual</h4>
+          <h4 className="font-bold">Página hecha por</h4>
           <ul className="flex flex-col gap-1 [&>li>a]:flex [&>li>a]:items-center [&>li>a]:gap-2">
+            <li className="flex items-center gap-2">
+              <Person /> Efraín Chacón
+            </li>
             <li>
               <a
                 href="mailto:efrachaga@gmail.com"
