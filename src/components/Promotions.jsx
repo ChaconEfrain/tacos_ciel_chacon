@@ -18,7 +18,7 @@ const Promotions = () => {
           Conoce nuestras promociones!
         </h2>
         <div className="flex flex-col gap-10 lg:px-6 sm:w-[70%] lg:w-full">
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-20">
             {PROMOTIONS.map(
               ({ title, description, tacos, drinks, price, icon }) => (
                 <Promotion

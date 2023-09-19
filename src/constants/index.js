@@ -41,25 +41,25 @@ export const PROMOTIONS = [
       "Si buscas algo rápido, con buen sabor y a un excelente precio, la promoción personal es ideal para ti!",
     tacos: "4 tacos",
     drinks: "1 bebida",
-    price: "$58",
+    price: "$62",
     icon: <Person />,
   },
-  {
-    title: "Pareja",
-    description:
-      "El paquete perfecto para compartir con tu amigo/a, pareja ó con quien tú quieras!",
-    tacos: "8 tacos",
-    drinks: "2 bebidas",
-    price: "$114",
-    icon: <Couple />,
-  },
+  // {
+  //   title: "Pareja",
+  //   description:
+  //     "El paquete perfecto para compartir con tu amigo/a, pareja ó con quien tú quieras!",
+  //   tacos: "8 tacos",
+  //   drinks: "2 bebidas",
+  //   price: "$114",
+  //   icon: <Couple />,
+  // },
   {
     title: "Familiar",
     description:
       "¿No sabes qué cocinar para tu familia? Con la promoción familiar todos quedan satisfechos, hasta tu bolsillo!",
     tacos: "20 tacos",
     drinks: "4 bebidas",
-    price: "$226",
+    price: "$296",
     icon: <Family />,
   },
 ];
@@ -74,7 +74,7 @@ export const PACKAGES = [
         tacosForEach: "4 tacos por persona",
         price: {
           withService: "$480",
-          withoutService: "$480",
+          withoutService: "$520",
         },
       },
       {
@@ -82,7 +82,7 @@ export const PACKAGES = [
         tacosForEach: "5 tacos por persona",
         price: {
           withService: "$600",
-          withoutService: "$600",
+          withoutService: "$650",
         },
       },
       {
@@ -90,7 +90,7 @@ export const PACKAGES = [
         tacosForEach: "6 tacos por persona",
         price: {
           withService: "$720",
-          withoutService: "$720",
+          withoutService: "$780",
         },
       },
     ],
@@ -104,7 +104,7 @@ export const PACKAGES = [
         tacosForEach: "4 tacos por persona",
         price: {
           withService: "$1,360",
-          withoutService: "$960",
+          withoutService: "$1,040",
         },
       },
       {
@@ -112,7 +112,7 @@ export const PACKAGES = [
         tacosForEach: "5 tacos por persona",
         price: {
           withService: "$1,600",
-          withoutService: "$1,200",
+          withoutService: "$1,300",
         },
       },
       {
@@ -120,7 +120,7 @@ export const PACKAGES = [
         tacosForEach: "6 tacos por persona",
         price: {
           withService: "$1,840",
-          withoutService: "$1,440",
+          withoutService: "$1,560",
         },
       },
     ],
@@ -134,7 +134,7 @@ export const PACKAGES = [
         tacosForEach: "4 tacos por persona",
         price: {
           withService: "$1,840",
-          withoutService: "$1,440",
+          withoutService: "$1,560",
         },
       },
       {
@@ -142,7 +142,7 @@ export const PACKAGES = [
         tacosForEach: "5 tacos por persona",
         price: {
           withService: "$2,100",
-          withoutService: "$1,800",
+          withoutService: "$1,950",
         },
       },
       {
@@ -150,7 +150,7 @@ export const PACKAGES = [
         tacosForEach: "6 tacos por persona",
         price: {
           withService: "$2,520",
-          withoutService: "$2,160",
+          withoutService: "$2,340",
         },
       },
     ],
@@ -164,7 +164,7 @@ export const PACKAGES = [
         tacosForEach: "4 tacos por persona",
         price: {
           withService: "$2,240",
-          withoutService: "$1,920",
+          withoutService: "$2,080",
         },
       },
       {
@@ -172,7 +172,7 @@ export const PACKAGES = [
         tacosForEach: "5 tacos por persona",
         price: {
           withService: "$2,800",
-          withoutService: "$2,400",
+          withoutService: "$2,600",
         },
       },
       {
@@ -180,7 +180,7 @@ export const PACKAGES = [
         tacosForEach: "6 tacos por persona",
         price: {
           withService: "$3,360",
-          withoutService: "$2,880",
+          withoutService: "$3,120",
         },
       },
     ],
@@ -194,7 +194,7 @@ export const PACKAGES = [
         tacosForEach: "4 tacos por persona",
         price: {
           withService: "$2,800",
-          withoutService: "$2,400",
+          withoutService: "$2,600",
         },
       },
       {
@@ -202,7 +202,7 @@ export const PACKAGES = [
         tacosForEach: "5 tacos por persona",
         price: {
           withService: "$3,500",
-          withoutService: "$3,000",
+          withoutService: "$3,250",
         },
       },
       {
@@ -210,7 +210,7 @@ export const PACKAGES = [
         tacosForEach: "6 tacos por persona",
         price: {
           withService: "$4,200",
-          withoutService: "$3,150",
+          withoutService: "$3,900",
         },
       },
     ],
@@ -224,7 +224,7 @@ export const PACKAGES = [
         tacosForEach: "4 tacos por persona",
         price: {
           withService: "$3,360",
-          withoutService: "$2,640",
+          withoutService: "$3,120",
         },
       },
       {
@@ -232,7 +232,7 @@ export const PACKAGES = [
         tacosForEach: "5 tacos por persona",
         price: {
           withService: "$4,200",
-          withoutService: "$3,150",
+          withoutService: "$3,900",
         },
       },
       {
@@ -240,7 +240,7 @@ export const PACKAGES = [
         tacosForEach: "6 tacos por persona",
         price: {
           withService: "$5,040",
-          withoutService: "$3,600",
+          withoutService: "$4,680",
         },
       },
     ],
@@ -254,7 +254,7 @@ export const PACKAGES = [
         tacosForEach: "4 tacos por persona",
         price: {
           withService: "$3,920",
-          withoutService: "$2,800",
+          withoutService: "$3,640",
         },
       },
       {
@@ -262,7 +262,7 @@ export const PACKAGES = [
         tacosForEach: "5 tacos por persona",
         price: {
           withService: "$4,900",
-          withoutService: "$3,500",
+          withoutService: "$4,550",
         },
       },
       {
@@ -270,7 +270,7 @@ export const PACKAGES = [
         tacosForEach: "6 tacos por persona",
         price: {
           withService: "$5,880",
-          withoutService: "$4,200",
+          withoutService: "$5,460",
         },
       },
     ],
@@ -284,7 +284,7 @@ export const PACKAGES = [
         tacosForEach: "4 tacos por persona",
         price: {
           withService: "$4,480",
-          withoutService: "$3,200",
+          withoutService: "$4,160",
         },
       },
       {
@@ -292,7 +292,7 @@ export const PACKAGES = [
         tacosForEach: "5 tacos por persona",
         price: {
           withService: "$5,600",
-          withoutService: "$4,000",
+          withoutService: "$5,200",
         },
       },
       {
@@ -300,7 +300,7 @@ export const PACKAGES = [
         tacosForEach: "6 tacos por persona",
         price: {
           withService: "$6,720",
-          withoutService: "$4,800",
+          withoutService: "$6,240",
         },
       },
     ],
@@ -314,7 +314,7 @@ export const PACKAGES = [
         tacosForEach: "4 tacos por persona",
         price: {
           withService: "$5,040",
-          withoutService: "$3,600",
+          withoutService: "$4,680",
         },
       },
       {
@@ -322,7 +322,7 @@ export const PACKAGES = [
         tacosForEach: "5 tacos por persona",
         price: {
           withService: "$6,300",
-          withoutService: "$4,500",
+          withoutService: "$5,850",
         },
       },
       {
@@ -330,7 +330,7 @@ export const PACKAGES = [
         tacosForEach: "6 tacos por persona",
         price: {
           withService: "$7,560",
-          withoutService: "$5,400",
+          withoutService: "$7,020",
         },
       },
     ],
@@ -344,7 +344,7 @@ export const PACKAGES = [
         tacosForEach: "4 tacos por persona",
         price: {
           withService: "$5,600",
-          withoutService: "$4,000",
+          withoutService: "$5,200",
         },
       },
       {
@@ -352,7 +352,7 @@ export const PACKAGES = [
         tacosForEach: "5 tacos por persona",
         price: {
           withService: "$7,000",
-          withoutService: "$5,000",
+          withoutService: "$6,500",
         },
       },
       {
@@ -360,7 +360,7 @@ export const PACKAGES = [
         tacosForEach: "6 tacos por persona",
         price: {
           withService: "$8,400",
-          withoutService: "$6,000",
+          withoutService: "$7,800",
         },
       },
     ],
