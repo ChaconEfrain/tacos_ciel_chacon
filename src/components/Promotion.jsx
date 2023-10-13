@@ -1,4 +1,4 @@
-import { useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { VALID_DAYS } from "@/constants";
 import { CloseButton, Soda, Taco } from "@/icons";
 
@@ -14,17 +14,22 @@ const Promotion = ({
 }) => {
   // const [showForm, setShowForm] = useState(false);
   const [whatsAppMessage, setWhatsAppMessage] = useState("");
+  const [isValidTime, setIsValidTime] = useState(false);
   const formRef = useRef(null);
   const nameId = useId();
   const isDomicilio = useId();
   const isNotDomicilio = useId();
   const [day, , , , fullHour] = new Date().toString().split(" ");
   const [hour, minutes] = fullHour.split(":");
-  const isValidTime =
-    VALID_DAYS.includes(day) &&
-    ((Number(hour) === 7 && Number(minutes) >= 30) ||
-      (Number(hour) > 7 && Number(hour) < 12) ||
-      (Number(hour) === 12 && Number(minutes) === 0));
+
+  useEffect(() => {
+    const validTime =
+      VALID_DAYS.includes(day) &&
+      ((Number(hour) === 7 && Number(minutes) >= 30) ||
+        (Number(hour) > 7 && Number(hour) < 12) ||
+        (Number(hour) === 12 && Number(minutes) === 0));
+    setIsValidTime(validTime);
+  }, []);
 
   const handleShowForm = () => {
     const newChosenPromotion = {};

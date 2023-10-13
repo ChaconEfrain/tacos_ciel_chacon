@@ -17,7 +17,7 @@ const Menu = () => {
       </ul>
       <footer className="flex flex-col gap-2 text-base sm:text-lg">
         <p>- Todos los paquetes incluyen lo siguiente:</p>
-        <ul className="flex flex-wrap gap-2 italic">
+        <ul className="flex flex-wrap gap-2 italic ml-4">
           {COMPLEMENTS.map((complement, i, arr) => (
             <li key={complement}>{`${complement}${
               i !== arr.length - 1 ? "," : "."

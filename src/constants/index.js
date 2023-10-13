@@ -1,4 +1,4 @@
-import { Couple, Facebook, Family, Instagram, Person, WhatsApp } from "@/icons";
+import { Facebook, Family, Instagram, Person, WhatsApp } from "@/icons";
 
 export const MAX_FLAVORS_AMOUNT = 6;
 
@@ -105,6 +105,7 @@ export const PACKAGES = [
         price: {
           withService: "$1,360",
           withoutService: "$1,040",
+          forChristmas: "$2,020",
         },
       },
       {
@@ -113,6 +114,7 @@ export const PACKAGES = [
         price: {
           withService: "$1,600",
           withoutService: "$1,300",
+          forChristmas: "$2,260",
         },
       },
       {
@@ -121,6 +123,7 @@ export const PACKAGES = [
         price: {
           withService: "$1,840",
           withoutService: "$1,560",
+          forChristmas: "$2,500",
         },
       },
     ],
@@ -135,6 +138,7 @@ export const PACKAGES = [
         price: {
           withService: "$1,840",
           withoutService: "$1,560",
+          forChristmas: "$2,500",
         },
       },
       {
@@ -143,6 +147,7 @@ export const PACKAGES = [
         price: {
           withService: "$2,100",
           withoutService: "$1,950",
+          forChristmas: "$2,760",
         },
       },
       {
@@ -151,6 +156,7 @@ export const PACKAGES = [
         price: {
           withService: "$2,520",
           withoutService: "$2,340",
+          forChristmas: "$3,180",
         },
       },
     ],
@@ -165,6 +171,7 @@ export const PACKAGES = [
         price: {
           withService: "$2,240",
           withoutService: "$2,080",
+          forChristmas: "$2,900",
         },
       },
       {
@@ -173,6 +180,7 @@ export const PACKAGES = [
         price: {
           withService: "$2,800",
           withoutService: "$2,600",
+          forChristmas: "$3,460",
         },
       },
       {
@@ -181,6 +189,7 @@ export const PACKAGES = [
         price: {
           withService: "$3,360",
           withoutService: "$3,120",
+          forChristmas: "$4,020",
         },
       },
     ],
@@ -195,6 +204,7 @@ export const PACKAGES = [
         price: {
           withService: "$2,800",
           withoutService: "$2,600",
+          forChristmas: "$3,460",
         },
       },
       {
@@ -203,6 +213,7 @@ export const PACKAGES = [
         price: {
           withService: "$3,500",
           withoutService: "$3,250",
+          forChristmas: "$4,160",
         },
       },
       {
@@ -211,6 +222,7 @@ export const PACKAGES = [
         price: {
           withService: "$4,200",
           withoutService: "$3,900",
+          forChristmas: "$4,860",
         },
       },
     ],
@@ -225,6 +237,7 @@ export const PACKAGES = [
         price: {
           withService: "$3,360",
           withoutService: "$3,120",
+          forChristmas: "$4,020",
         },
       },
       {
@@ -233,6 +246,7 @@ export const PACKAGES = [
         price: {
           withService: "$4,200",
           withoutService: "$3,900",
+          forChristmas: "$4,860",
         },
       },
       {
@@ -241,6 +255,7 @@ export const PACKAGES = [
         price: {
           withService: "$5,040",
           withoutService: "$4,680",
+          forChristmas: "$5,700",
         },
       },
     ],
@@ -255,6 +270,7 @@ export const PACKAGES = [
         price: {
           withService: "$3,920",
           withoutService: "$3,640",
+          forChristmas: "$4,680",
         },
       },
       {
@@ -263,6 +279,7 @@ export const PACKAGES = [
         price: {
           withService: "$4,900",
           withoutService: "$4,550",
+          forChristmas: "$5,560",
         },
       },
       {
@@ -271,6 +288,7 @@ export const PACKAGES = [
         price: {
           withService: "$5,880",
           withoutService: "$5,460",
+          forChristmas: "$6,540",
         },
       },
     ],
@@ -285,6 +303,7 @@ export const PACKAGES = [
         price: {
           withService: "$4,480",
           withoutService: "$4,160",
+          forChristmas: "$5,140",
         },
       },
       {
@@ -293,6 +312,7 @@ export const PACKAGES = [
         price: {
           withService: "$5,600",
           withoutService: "$5,200",
+          forChristmas: "$6,260",
         },
       },
       {
@@ -301,6 +321,7 @@ export const PACKAGES = [
         price: {
           withService: "$6,720",
           withoutService: "$6,240",
+          forChristmas: "$7,380",
         },
       },
     ],
@@ -315,6 +336,7 @@ export const PACKAGES = [
         price: {
           withService: "$5,040",
           withoutService: "$4,680",
+          forChristmas: "$5,700",
         },
       },
       {
@@ -323,6 +345,7 @@ export const PACKAGES = [
         price: {
           withService: "$6,300",
           withoutService: "$5,850",
+          forChristmas: "$6,960",
         },
       },
       {
@@ -331,6 +354,7 @@ export const PACKAGES = [
         price: {
           withService: "$7,560",
           withoutService: "$7,020",
+          forChristmas: "$8,220",
         },
       },
     ],
@@ -345,6 +369,7 @@ export const PACKAGES = [
         price: {
           withService: "$5,600",
           withoutService: "$5,200",
+          forChristmas: "$6,260",
         },
       },
       {
@@ -353,6 +378,7 @@ export const PACKAGES = [
         price: {
           withService: "$7,000",
           withoutService: "$6,500",
+          forChristmas: "$7,660",
         },
       },
       {
@@ -361,6 +387,7 @@ export const PACKAGES = [
         price: {
           withService: "$8,400",
           withoutService: "$7,800",
+          forChristmas: "$9,060",
         },
       },
     ],
@@ -412,6 +439,54 @@ export const COMPLEMENTS = [
   "Salsa roja casera (picante)",
   "Servilletas",
   "Platos desechables",
+];
+
+export const WINE_OPTIONS = [
+  {
+    name: "Vino tinto",
+    options: [
+      "Beronia Crianza Rioja 2019 (Tempranillo)",
+      "Chateau Domecq 2018 (Cabernet sauvignon)",
+      "Reservado concha y toro (Shiraz)",
+      "Don Luis Cetto 2019 (Merlot)",
+    ],
+  },
+  {
+    name: "Vino blanco",
+    options: [
+      "Finca las moras (Sauvignon blanc)",
+      "Fumé blanc La cetto (Sauvignon blanc)",
+      "Domecq XA (Blend)",
+    ],
+  },
+  {
+    name: "Vino rosa",
+    options: [
+      "Casillero del diablo Belight concha y toro (Rosé)",
+      "Woodbridge white zinfandel (Zinfandel)",
+      "Viña maipo classic series (Rosé)",
+      "Chemin de sables 2022 (Blend)",
+    ],
+  },
+  {
+    name: "Vino espumoso",
+    options: [
+      "Casillero del diablo devils brut concha y toro (Brut, blanco)",
+      "Riunite (Blanco, sauvignon blanc, pinot blanc)",
+      "Fogoso gold (Blend)",
+      "Riccadonna prosecco (Blanco, blend)",
+    ],
+  },
+];
+
+export const VEGGIE_OPTIONS = [
+  "Brócoli con queso y mantequilla",
+  "Coliflor con queso y mantequilla",
+  "Calabaza italiana con queso y mantequila",
+  "Rajas con crema",
+  "Champiñones con queso y mantequilla",
+  "Papa",
+  "Frijol",
 ];
 
 export const INITIAL_EVENT_ERRORS = {

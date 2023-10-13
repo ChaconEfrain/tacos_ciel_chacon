@@ -1,10 +1,8 @@
-import useSwiper from "@/hooks/useSwiper";
 import Container from "./Container";
-import Package from "./Package";
 import Menu from "./Menu";
-import { PACKAGES } from "@/constants";
 import SwiperWithService from "./SwiperWithService";
 import SwiperWithoutService from "./SwiperWithoutService";
+import SwiperChristmas from "./SwiperChristmas";
 
 const Packages = () => {
   return (
@@ -15,6 +13,7 @@ const Packages = () => {
         </h2>
         <Menu />
         <SwiperWithService />
+        <SwiperChristmas />
         <SwiperWithoutService />
       </div>
     </Container>
