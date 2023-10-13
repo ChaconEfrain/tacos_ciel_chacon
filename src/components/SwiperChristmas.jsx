@@ -59,9 +59,9 @@ export default function SwiperChristmas() {
         }}
         ref={swiperEl}
       >
-        <swiper-slide>
+        {/* <swiper-slide>
           <VeggieMenu />
-        </swiper-slide>
+        </swiper-slide> */}
         {PACKAGES.map(
           ({ title, groupSize, options }) =>
             Number(groupSize.split(" ")[0]) > 10 && (

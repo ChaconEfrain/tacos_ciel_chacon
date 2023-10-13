@@ -1,5 +1,5 @@
-import { MENU } from "@/constants";
-import React from "react";
+import { MENU, VEGGIE_OPTIONS } from "@/constants";
+import React, { useEffect, useState } from "react";
 
 const MenuDropdownList = ({
   name,
@@ -17,6 +17,15 @@ const MenuDropdownList = ({
       >
         <option value="default">Seleccionar guiso</option>
         {MENU.map((item) => (
+          <option
+            key={item}
+            value={item}
+            disabled={selectedFlavors.includes(item)}
+          >
+            {item}
+          </option>
+        ))}
+        {VEGGIE_OPTIONS.map((item) => (
           <option
             key={item}
             value={item}
